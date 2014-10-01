@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B8D09011-1D77-4809-B086-095EB7183CB0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RKNotificationHub</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>520F45C700A540DF04AC14D3D535CA39508D941F</key>
+		<string>https://github.com/cwRichardKim/RKNotificationHub.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RKNotificationHub.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>520F45C700A540DF04AC14D3D535CA39508D941F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/cwRichardKim/RKNotificationHub.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>520F45C700A540DF04AC14D3D535CA39508D941F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>520F45C700A540DF04AC14D3D535CA39508D941F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RKNotificationHub</string>
+		</dict>
+	</array>
+</dict>
+</plist>
