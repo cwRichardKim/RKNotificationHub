@@ -5,7 +5,7 @@ A way to quickly add a notification icon to a UIButton
 
 __Take any button__
 
-![button](http://imgur.com/MkFvakk.png)
+![button](http://i.imgur.com/MkFvakk.png?1)
 
 __Add some code__
 
@@ -63,7 +63,7 @@ http://i.imgur.com/boGyL9T.gif
            labelColor:[UIColor whiteColor]];
 ```
 
-![frame](http://imgur.com/6w9WaO4.png)
+![frame](http://i.imgur.com/6w9WaO4.png?1)
 ```objc
   [hub setCircleAtFrame:CGRectMake(-10, -10, 30, 30)];
 ```
