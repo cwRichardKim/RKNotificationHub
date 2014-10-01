@@ -29,8 +29,11 @@
 -(void)bump;
 
 //%%% using a set
+@property (nonatomic)NSMutableSet* objectSet;
 -(void)updateWithSetCount;
 
-@property (nonatomic)NSMutableSet* objectsSet;
+//%%% using an array
+@property (nonatomic)NSMutableArray* objectArray;
+-(void)updateWithArrayCount;
 
 @end

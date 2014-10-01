@@ -34,7 +34,8 @@ static const float BUMP_TIME_2 = 0.1;
     CGPoint initialCenter;
     CGRect initialFrame;
 }
-@synthesize objectsSet;
+@synthesize objectSet;
+@synthesize objectArray;
 
 //////////////////////////////////////////////////////////
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -57,7 +58,7 @@ static const float BUMP_TIME_2 = 0.1;
     [countLabel setTextAlignment:NSTextAlignmentCenter];
     countLabel.textColor = [UIColor whiteColor];
     
-    objectsSet = [[NSMutableSet alloc]init];
+    objectSet = [[NSMutableSet alloc]init];
     
     [self setCircleAtFrame:CGRectMake(frame.size.width-(DIAMETER/2), -DIAMETER/2, DIAMETER, DIAMETER)];
     
@@ -131,7 +132,13 @@ static const float BUMP_TIME_2 = 0.1;
 
 -(void)updateWithSetCount
 {
-    count = (int)objectsSet.count;
+    count = (int)objectSet.count;
+    [self setCount:count];
+}
+
+-(void)updateWithArrayCount
+{
+    count = (int)objectArray.count;
     [self setCount:count];
 }
 
