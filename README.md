@@ -59,11 +59,13 @@ __Combine Actions!__
 ###Customize
 ![blink](http://i.imgur.com/Ftbrh87.gif)
 ``` objc
+  //%%% COLOR
   [hub setCircleColor:[UIColor colorWithRed:0.98 green:0.66 blue:0.2 alpha:1] 
            labelColor:[UIColor whiteColor]];
 ```
 
 ![frame](http://i.imgur.com/6w9WaO4.png?1)
 ```objc
+  //%%% CIRCLE FRAME
   [hub setCircleAtFrame:CGRectMake(-10, -10, 30, 30)];
 ```
