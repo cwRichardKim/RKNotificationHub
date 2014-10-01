@@ -60,7 +60,7 @@ static const float BUMP_TIME_2 = 0.1;
     
     objectSet = [[NSMutableSet alloc]init];
     
-    [self setCircleAtFrame:CGRectMake(frame.size.width-(DIAMETER/2), -DIAMETER/2, DIAMETER, DIAMETER)];
+    [self setCircleAtFrame:CGRectMake(frame.size.width-(DIAMETER*2/3), -DIAMETER/3, DIAMETER, DIAMETER)];
     
     [button addSubview:redCircle];
     [button addSubview:countLabel];

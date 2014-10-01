@@ -35,8 +35,6 @@
     
     hub = [[RKNotificationHub alloc]init];
     [hub setButton:button andCount:0];
-    
-    [hub setCircleAtFrame:CGRectMake(-10, -10, 30, 30)];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
