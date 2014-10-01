@@ -12,11 +12,11 @@ Take any button
 Add some code
 ``` objc
   RKNotificationHub* hub = [[RKNotificationHub alloc]init];
-  [hub setButton:button andCount:1];
+  [hub setButton:button andCount:1]; //%%% the initial count
 ```
 Voilà!
 
-![hub](http://i.imgur.com/boGyL9T.gif)
+![hub](http://i.imgur.com/boGyL9T.gif) (check below for animations)
 
 ###Usage
 ![increment](http://i.imgur.com/zpgkNtE.gif)
