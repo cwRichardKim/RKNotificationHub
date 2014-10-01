@@ -14,6 +14,8 @@
 		998DB1C019DAEA72006655C8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 998DB1BF19DAEA72006655C8 /* Images.xcassets */; };
 		998DB1C319DAEA72006655C8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 998DB1C119DAEA72006655C8 /* LaunchScreen.xib */; };
 		998DB1CF19DAEA72006655C8 /* RKNotificationHubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 998DB1CE19DAEA72006655C8 /* RKNotificationHubTests.m */; };
+		998DB1DA19DAEE12006655C8 /* RKNotificationHub.m in Sources */ = {isa = PBXBuildFile; fileRef = 998DB1D919DAEE12006655C8 /* RKNotificationHub.m */; };
+		998DB1E219DAFE9D006655C8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998DB1E119DAFE9D006655C8 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		998DB1C819DAEA72006655C8 /* RKNotificationHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RKNotificationHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		998DB1CD19DAEA72006655C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		998DB1CE19DAEA72006655C8 /* RKNotificationHubTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKNotificationHubTests.m; sourceTree = "<group>"; };
+		998DB1D819DAEE12006655C8 /* RKNotificationHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKNotificationHub.h; sourceTree = "<group>"; };
+		998DB1D919DAEE12006655C8 /* RKNotificationHub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKNotificationHub.m; sourceTree = "<group>"; };
+		998DB1E119DAFE9D006655C8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				998DB1E219DAFE9D006655C8 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,7 @@
 		998DB1A619DAEA72006655C8 = {
 			isa = PBXGroup;
 			children = (
+				998DB1E119DAFE9D006655C8 /* QuartzCore.framework */,
 				998DB1B119DAEA72006655C8 /* RKNotificationHub */,
 				998DB1CB19DAEA72006655C8 /* RKNotificationHubTests */,
 				998DB1B019DAEA72006655C8 /* Products */,
@@ -85,6 +92,8 @@
 				998DB1B719DAEA72006655C8 /* AppDelegate.m */,
 				998DB1B919DAEA72006655C8 /* ViewController.h */,
 				998DB1BA19DAEA72006655C8 /* ViewController.m */,
+				998DB1D819DAEE12006655C8 /* RKNotificationHub.h */,
+				998DB1D919DAEE12006655C8 /* RKNotificationHub.m */,
 				998DB1BC19DAEA72006655C8 /* Main.storyboard */,
 				998DB1BF19DAEA72006655C8 /* Images.xcassets */,
 				998DB1C119DAEA72006655C8 /* LaunchScreen.xib */,
@@ -220,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				998DB1BB19DAEA72006655C8 /* ViewController.m in Sources */,
+				998DB1DA19DAEE12006655C8 /* RKNotificationHub.m in Sources */,
 				998DB1B819DAEA72006655C8 /* AppDelegate.m in Sources */,
 				998DB1B519DAEA72006655C8 /* main.m in Sources */,
 			);
