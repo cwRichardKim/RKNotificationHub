@@ -10,12 +10,10 @@ Take any button
 ![button](http://i.imgur.com/MkFvakk.png?1)
 
 Add some code
-
 ``` objc
   RKNotificationHub* hub = [[RKNotificationHub alloc]init];
   [hub setButton:button andCount:1];
 ```
-
 Voilà!
 
 ![hub](http://i.imgur.com/boGyL9T.gif)
