@@ -3,7 +3,7 @@ RKNotificationHub
 
 A way to quickly add a notification icon to a UIButton
 
-###Demo
+###DEMO
 
 Take any button
 
@@ -18,7 +18,7 @@ Voilà!
 
 ![hub](http://i.imgur.com/boGyL9T.gif)   (check below for animations)
 
-###Usage
+###USAGE
 ![increment](http://i.imgur.com/zpgkNtE.gif)
 ``` objc
   [hub increment];
@@ -30,9 +30,17 @@ __Other Options__
   -(void)decrement;
   -(void)decrementBy:(int)amount;
   -(void)setCount:(int)currentCount; //%%% set to a certain number
+  
+  //%%% using a set (see below)
+  @property (nonatomic)NSMutableSet* objectsSet;
+  -(void)updateWithSetCount;
+  
+  //%%% using an array
+  @property (nonatomic)NSMutableArray* objectArray;
+  -(void)updateWithArrayCount;
 ```
 
-###Animations
+###ANIMATIONS
 ![pop](http://i.imgur.com/g6tMepj.gif)
 ``` objc
   [hub pop];
@@ -56,7 +64,7 @@ __Combine Actions!__
   [hub pop];
 ```
 
-###Customize
+###CUSTOMIZE
 ![blink](http://i.imgur.com/Ftbrh87.gif)
 ``` objc
   //%%% COLOR
@@ -69,3 +77,40 @@ __Combine Actions!__
   //%%% CIRCLE FRAME
   [hub setCircleAtFrame:CGRectMake(-10, -10, 30, 30)];
 ```
+
+
+###USING SETS OR ARRAYS
+If you have your own array (say an array of notifications or an array of messages), you can use this section so that you don't have to manually change the count
+
+```objc
+  //%%% using a set
+  @property (nonatomic)NSMutableSet* objectSet;
+  -(void)updateWithSetCount;
+  
+  //%%% using an array
+  @property (nonatomic)NSMutableArray* objectArray;
+-(void)updateWithArrayCount;
+```
+
+```objc
+  //%%% using a set
+  hub.objectSet = yourSet;
+  [hub updateWithSetCount];
+  
+  //%%% or
+  [hub.objectSet addObject:@"a unique id of a message"];
+  [hub updateWithSetCount];
+  //%%% this will increment the count by one if that id doesn't already exist in the set
+```
+
+```objc
+  //%%% using an array
+  hub.objectArray = yourArray;
+  [hub updateWithArrayCount];
+  
+  //%%% or
+  [hub.objectArray addObject:@"a unique id of a message"];
+  [hub updateWithArrayCount];
+  //%%% this will increment the count by one regardless of whether that id exists already
+```
+Of course you can do the other standard set / array operations (removing objects, printing them, looping through them, etc)
