@@ -5,18 +5,18 @@ A way to quickly add a notification icon to a UIButton
 
 ###Demo
 
-__Take any button__
+Take any button
 
 ![button](http://i.imgur.com/MkFvakk.png?1)
 
-__Add some code__
+Add some code
 
 ``` objc
   hub = [[RKNotificationHub alloc]init];
   [hub setButton:button andCount:1];
 ```
 
-__Voilà!__
+Voilà!
 
 ![hub](http://i.imgur.com/boGyL9T.gif)
 
