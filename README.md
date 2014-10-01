@@ -49,7 +49,7 @@ __Other Options__
 ```
 
 __Combine Actions!__
-http://i.imgur.com/boGyL9T.gif
+
 ![blink](http://i.imgur.com/boGyL9T.gif)
 ``` objc
   [hub increment];
