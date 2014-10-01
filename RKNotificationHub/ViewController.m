@@ -37,27 +37,12 @@
     [hub setButton:button andCount:0];
     
     [hub setCircleAtFrame:CGRectMake(-10, -10, 30, 30)];
-//    [hub setCircleColor:[UIColor colorWithRed:0.98 green:0.66 blue:0.2 alpha:1] labelColor:[UIColor whiteColor]];
-    
-    UIButton *testButton = [[UIButton alloc]initWithFrame:CGRectMake(100, 300, 30, 30)];
-    testButton.backgroundColor = [UIColor blackColor];
-    [self.view addSubview:testButton];
-    [testButton addTarget:self action:@selector(test2) forControlEvents:UIControlEventTouchUpInside];
-    
-    [hub.objectSet addObject:@"a specific id of a message"];
-    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
 -(void)test
 {
     [hub increment];
-}
-
--(void)test2
-{
-    [hub increment];
-    [hub bump];
 }
 
 - (void)didReceiveMemoryWarning {
