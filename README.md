@@ -7,16 +7,13 @@ A way to quickly add a notification icon to a UIButton
 
 Take any button
 
-![button](http://i.imgur.com/MkFvakk.png?1)
+![demo](http://i.imgur.com/LG2EEB6.gif)
 
-Add some code
+Code:
 ``` objc
   RKNotificationHub* hub = [[RKNotificationHub alloc]init];
   [hub setButton:button andCount:1]; //%%% the initial count
 ```
-Voilà!
-
-![hub](http://i.imgur.com/boGyL9T.gif)   (check below for animations)
 
 ###USAGE
 ![increment](http://i.imgur.com/zpgkNtE.gif)
