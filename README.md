@@ -3,6 +3,8 @@ RKNotificationHub
 
 A way to quickly add a notification icon to a UIButton
 
+###Demo
+
 __Take any button__
 
 ![button](http://i.imgur.com/MkFvakk.png?1)
