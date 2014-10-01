@@ -16,9 +16,7 @@ Add some code
 ```
 Voilà!
 
-![hub](http://i.imgur.com/boGyL9T.gif) 
-
-(check below for animations)
+![hub](http://i.imgur.com/boGyL9T.gif)   (check below for animations)
 
 ###Usage
 ![increment](http://i.imgur.com/zpgkNtE.gif)
