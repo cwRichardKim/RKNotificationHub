@@ -12,7 +12,7 @@ Take any button
 Add some code
 
 ``` objc
-  hub = [[RKNotificationHub alloc]init];
+  RKNotificationHub* hub = [[RKNotificationHub alloc]init];
   [hub setButton:button andCount:1];
 ```
 
