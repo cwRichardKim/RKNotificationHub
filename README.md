@@ -91,9 +91,8 @@ If you have your own array (say an array of notifications or an array of message
   @property (nonatomic)NSMutableArray* objectArray;
 -(void)updateWithArrayCount;
 ```
-
+Using a set
 ```objc
-  //%%% using a set
   hub.objectSet = yourSet;
   [hub updateWithSetCount];
   
@@ -102,9 +101,8 @@ If you have your own array (say an array of notifications or an array of message
   [hub updateWithSetCount];
   //%%% this will increment the count by one if that id doesn't already exist in the set
 ```
-
+Using an array
 ```objc
-  //%%% using an array
   hub.objectArray = yourArray;
   [hub updateWithArrayCount];
   
