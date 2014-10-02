@@ -39,6 +39,8 @@ static const float BUMP_TIME_2 = 0.1;
 
 #pragma mark - SETUP
 
+//%%% give this a button and an initial count (0 hides the notification circle)
+// and it will make a hub for you
 -(void)setButton:(UIButton*)button andCount:(int)startCount
 {
     CGRect frame = button.frame;
@@ -64,6 +66,7 @@ static const float BUMP_TIME_2 = 0.1;
     [self checkZero];
 }
 
+//%%% set the frame of the notification circle relative to the button
 -(void)setCircleAtFrame:(CGRect)frame
 {
     [redCircle setFrame:frame];
@@ -74,6 +77,7 @@ static const float BUMP_TIME_2 = 0.1;
     [countLabel setFont:[UIFont fontWithName:@"HelveticaNeue" size:frame.size.width/2]];
 }
 
+//%%% change the color of the notification circle
 -(void)setCircleColor:(UIColor*)circleColor labelColor:(UIColor*)labelColor
 {
     redCircle.backgroundColor = circleColor;
@@ -82,16 +86,19 @@ static const float BUMP_TIME_2 = 0.1;
 
 #pragma mark - ATTRIBUTES
 
+//%%% increases count by 1
 -(void)increment
 {
     [self setCount:count+1];
 }
 
+//%%% increases count by amount
 -(void)incrementBy:(int)amount
 {
     [self setCount:count+amount];
 }
 
+//%%% decreases count
 -(void)decrement
 {
     if (count == 0) {
@@ -100,11 +107,13 @@ static const float BUMP_TIME_2 = 0.1;
     [self setCount:count-1];
 }
 
+//%%% decreases count by amount
 -(void)decrementBy:(int)amount
 {
     [self setCount:count-amount];
 }
 
+//%%% set the count yourself
 -(void)setCount:(int)currentCount
 {
     count = currentCount;
@@ -112,12 +121,14 @@ static const float BUMP_TIME_2 = 0.1;
     [self checkZero];
 }
 
+//%%% updates the notification number to the number of objects in objectSet
 -(void)updateWithSetCount
 {
     count = (int)objectSet.count;
     [self setCount:count];
 }
 
+//%%% updates the notification number to the number of objects in objectArray
 -(void)updateWithArrayCount
 {
     count = (int)objectArray.count;
@@ -126,6 +137,7 @@ static const float BUMP_TIME_2 = 0.1;
 
 #pragma mark - ANIMATION
 
+//%%% animation that resembles facebook's pop
 -(void)pop
 {
     const float diameter = initialFrame.size.width;
@@ -209,6 +221,7 @@ static const float BUMP_TIME_2 = 0.1;
     }];
 }
 
+//%%% animation that flashes on an off
 -(void)blink
 {
     [self setAlpha:BLINK_ALPHA];
@@ -226,6 +239,7 @@ static const float BUMP_TIME_2 = 0.1;
     }];
 }
 
+//%%% animation that jumps similar to OSX dock icons
 -(void)bump
 {
     if (!CGPointEqualToPoint(initialCenter,redCircle.center)) {
@@ -252,6 +266,7 @@ static const float BUMP_TIME_2 = 0.1;
 
 #pragma mark - HELPERS
 
+//%%% changes the Y origin of the notification circle
 -(void)bumpCenterY:(float)yVal
 {
     CGPoint center = redCircle.center;
@@ -266,6 +281,7 @@ static const float BUMP_TIME_2 = 0.1;
     countLabel.alpha = alpha;
 }
 
+//%%% used for pop animation to change the diameter
 -(CGRect)nextRectWithDiameter:(float)diameter
 {
     const float initialD = initialFrame.size.width;
@@ -279,6 +295,7 @@ static const float BUMP_TIME_2 = 0.1;
     return frame;
 }
 
+//%%% hides the notification if the value is 0
 -(void)checkZero
 {
     if (count <= 0) {
