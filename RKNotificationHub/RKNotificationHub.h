@@ -61,4 +61,6 @@
 @property (nonatomic)NSMutableArray* objectArray;
 -(void)updateWithArrayCount;
 
+@property (nonatomic)UIButton* hubButton;
+
 @end

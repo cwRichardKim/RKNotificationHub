@@ -36,6 +36,7 @@ static const float BUMP_TIME_2 = 0.1;
 }
 @synthesize objectSet;
 @synthesize objectArray;
+@synthesize hubButton;
 
 #pragma mark - SETUP
 
@@ -63,6 +64,7 @@ static const float BUMP_TIME_2 = 0.1;
     [button addSubview:countLabel];
     [button bringSubviewToFront:redCircle];
     [button bringSubviewToFront:countLabel];
+    hubButton = button;
     [self checkZero];
 }
 
