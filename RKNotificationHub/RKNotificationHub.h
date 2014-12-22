@@ -56,14 +56,6 @@
 -(void)blink;
 -(void)bump;
 
-//%%% using a set
-@property (nonatomic)NSMutableSet* objectSet;
--(void)updateWithSetCount;
-
-//%%% using an array
-@property (nonatomic)NSMutableArray* objectArray;
--(void)updateWithArrayCount;
-
 @property (nonatomic)UIView *hubView;
 
 @end

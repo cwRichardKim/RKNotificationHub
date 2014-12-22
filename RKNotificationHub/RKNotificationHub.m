@@ -34,8 +34,6 @@ static const float BUMP_TIME_2 = 0.1;
     CGPoint initialCenter;
     CGRect initialFrame;
 }
-@synthesize objectSet;
-@synthesize objectArray;
 @synthesize hubView;
 
 #pragma mark - SETUP
@@ -65,8 +63,6 @@ static const float BUMP_TIME_2 = 0.1;
     [self setCount:startCount];
     [countLabel setTextAlignment:NSTextAlignmentCenter];
     countLabel.textColor = [UIColor whiteColor];
-    
-    objectSet = [[NSMutableSet alloc]init];
     
     [self setCircleAtFrame:CGRectMake(frame.size.width-(DIAMETER*2/3), -DIAMETER/3, DIAMETER, DIAMETER)];
     
@@ -131,20 +127,6 @@ static const float BUMP_TIME_2 = 0.1;
     count = newCount;
     countLabel.text = [NSString stringWithFormat:@"%i",count];
     [self checkZero];
-}
-
-//%%% updates the notification number to the number of objects in objectSet
--(void)updateWithSetCount
-{
-    count = (int)objectSet.count;
-    [self setCount:count];
-}
-
-//%%% updates the notification number to the number of objects in objectArray
--(void)updateWithArrayCount
-{
-    count = (int)objectArray.count;
-    [self setCount:count];
 }
 
 #pragma mark - ANIMATION
