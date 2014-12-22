@@ -422,6 +422,7 @@
 				998DB1D419DAEA72006655C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		998DB1D519DAEA72006655C8 /* Build configuration list for PBXNativeTarget "RKNotificationHubTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +431,7 @@
 				998DB1D719DAEA72006655C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

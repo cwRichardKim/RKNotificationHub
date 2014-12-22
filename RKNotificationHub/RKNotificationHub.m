@@ -36,15 +36,25 @@ static const float BUMP_TIME_2 = 0.1;
 }
 @synthesize objectSet;
 @synthesize objectArray;
-@synthesize hubButton;
+@synthesize hubView;
 
 #pragma mark - SETUP
 
-//%%% give this a button and an initial count (0 hides the notification circle)
-// and it will make a hub for you
--(void)setButton:(UIButton*)button andCount:(int)startCount
+-(id)initWithView:(UIView *)view
 {
-    CGRect frame = button.frame;
+    self = [super init];
+    if (!self) return nil;
+    
+    [self setView:view andCount:0];
+    
+    return self;
+}
+
+//%%% give this a view and an initial count (0 hides the notification circle)
+// and it will make a hub for you
+-(void)setView:(UIView *)view andCount:(int)startCount
+{
+    CGRect frame = view.frame;
     
     redCircle = [[UIView alloc]init];
     redCircle.userInteractionEnabled = NO;
@@ -60,11 +70,11 @@ static const float BUMP_TIME_2 = 0.1;
     
     [self setCircleAtFrame:CGRectMake(frame.size.width-(DIAMETER*2/3), -DIAMETER/3, DIAMETER, DIAMETER)];
     
-    [button addSubview:redCircle];
-    [button addSubview:countLabel];
-    [button bringSubviewToFront:redCircle];
-    [button bringSubviewToFront:countLabel];
-    hubButton = button;
+    [view addSubview:redCircle];
+    [view addSubview:countLabel];
+    [view bringSubviewToFront:redCircle];
+    [view bringSubviewToFront:countLabel];
+    hubView = view;
     [self checkZero];
 }
 
@@ -116,9 +126,9 @@ static const float BUMP_TIME_2 = 0.1;
 }
 
 //%%% set the count yourself
--(void)setCount:(int)currentCount
+-(void)setCount:(int)newCount
 {
-    count = currentCount;
+    count = newCount;
     countLabel.text = [NSString stringWithFormat:@"%i",count];
     [self checkZero];
 }

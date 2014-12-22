@@ -36,8 +36,11 @@
 
 @interface RKNotificationHub : NSObject
 
-//%%% setup attributes
--(void)setButton:(UIButton*)button andCount:(int)startCount;
+//%%% setup
+-(id)initWithView:(UIView *)view;
+
+//%%% adjustment methods
+-(void)setView:(UIView *)view andCount:(int)startCount;
 -(void)setCircleAtFrame:(CGRect)frame;
 -(void)setCircleColor:(UIColor*)circleColor labelColor:(UIColor*)labelColor;
 
@@ -46,7 +49,7 @@
 -(void)incrementBy:(int)amount;
 -(void)decrement;
 -(void)decrementBy:(int)amount;
--(void)setCount:(int)currentCount;
+-(void)setCount:(int)newCount;
 
 //%%% animations
 -(void)pop;
@@ -61,6 +64,6 @@
 @property (nonatomic)NSMutableArray* objectArray;
 -(void)updateWithArrayCount;
 
-@property (nonatomic)UIButton* hubButton;
+@property (nonatomic)UIView *hubView;
 
 @end

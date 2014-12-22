@@ -29,18 +29,17 @@
     button.layer.cornerRadius = 5;
     
     
-    [button addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(testIncrement) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:button];
     
-    hub = [[RKNotificationHub alloc]init];
-    [hub setButton:button andCount:0];
-    // Do any additional setup after loading the view, typically from a nib.
+    hub = [[RKNotificationHub alloc]initWithView:button];
 }
 
--(void)test
+-(void)testIncrement
 {
     [hub increment];
+    [hub pop];
 }
 
 - (void)didReceiveMemoryWarning {
