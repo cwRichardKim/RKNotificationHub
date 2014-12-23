@@ -1,11 +1,3 @@
-#
-#  Be sure to run `pod spec lint RKSwipeBetweenViewControllers.podspec' to ensure this is a
-#  valid spec and to remove all comments including this before submitting the spec.
-#
-#  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
-#  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
-#
-
 Pod::Spec.new do |s|
 
 # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -15,11 +7,11 @@ Pod::Spec.new do |s|
 #  summary should be tweet-length, and the description more in depth.
 #
 
-s.name         = "RKDropdownAlert"
-s.version      = "0.1.1"
-s.summary      = "iOS: an extremely simple (and customizeable) alert alternative based on Facebook's app Slingshot"
+s.name         = "RKNotificationHub"
+s.version      = "1.0.0"
+s.summary      = "iOS: Make any UIView a full fledged notification center"
 
-s.description  = "A UIAlertView alternative that mimics the iPhone's push notification system', -UIAlertView, -SVProgressHUD, -objectivec, -ios, -iphone, -xcode"
+s.description  = "A simple one line solution to turning adding a notification bubble to any UIView. Easily increment, decrement, an animate the notification, -Notification, -Notification Center, -objectivec, -ios, -iphone, -xcode"
 
 s.homepage     = "https://github.com/cwRichardKim/RKDropdownAlert"
 s.screenshots  = "http://i.imgur.com/OlYystx.gif"
@@ -57,7 +49,7 @@ s.social_media_url   = "http://twitter.com/cwrichardkim"
 #
 
 # s.platform     = :ios
-s.platform     = :ios, "7.0"
+s.platform     = :ios, "8.1"
 
 #  When using multiple platforms
 # s.ios.deployment_target = "5.0"
@@ -70,7 +62,7 @@ s.platform     = :ios, "7.0"
 #  Supports git, hg, bzr, svn and HTTP.
 #
 
-s.source       = { :git => "https://github.com/cwRichardKim/RKDropdownAlert.git", :tag => s.version.to_s }
+s.source       = { :git => "https://github.com/cwRichardKim/RKNotificationHub.git", :tag => s.version.to_s }
 
 
 # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -81,7 +73,7 @@ s.source       = { :git => "https://github.com/cwRichardKim/RKDropdownAlert.git"
 #  Not including the public_header_files will make all headers public.
 #
 
-s.source_files  = 'SlingshotDropdownAlert/RKDropdownAlert.h', 'SlingshotDropdownAlert/RKDropdownAlert.m'
+s.source_files  = 'RKNotificationHub/RKNotificationHub.h', 'RKNotificationHub/RKNotificationHub.m'
 
 # s.public_header_files = "Classes/**/*.h"
 
