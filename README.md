@@ -8,6 +8,7 @@ A way to quickly add a notification icon to a UIView
 Code:
 ``` objc
   RKNotificationHub* hub = [[RKNotificationHub alloc]initWithView:yourView];
+  [hub increment];
 ```
 
 ###USAGE
@@ -50,3 +51,22 @@ __Combine Actions!__
   //%%% CIRCLE SIZE
   [hub scaleCircleSizeBy:2]; // doubles the size of the circle, keeps the same center
 ```
+
+###TROUBLESHOOTING
+**Notification isn't showing up!**
+* If the hub value is < 1, the circle hides.  Try calling [increment]
+* Make sure the view you set the hub to is visible (i.e. did you call [self.view addSubview: yourView]?)
+
+**It isn't incrementing / decrementing properly!**
+* I've written it so that any count < 1 doesn't show up. If you need help undoing this, reach out to me
+* Calling [decrement] will never bring the count below 0, but calling [decrementBy:] or [setCount:] will allow negative values (negative values still won't show up)
+
+**The circle is in a weird place**
+* If you want to resize the circle, use [scaleCircleSizeBy:]. 0.5 will give you half the size, 2 will give you double
+* If the circle is just a few pixels off, use [moveCircleByX: Y:]. This shifts the circle by the number of pixels given
+* If you want to manually set the circle, call [setCircleAtFrame:] and give it your own CGRect
+
+**Something else isn't working properly**
+* Send me a tweet @cwRichardKim with #RKNotificationHub so that other people can search these issues too
+* Use github's issue reporter on the right
+* Send me an email cwRichardKim@gmail.com (might take a few days)
