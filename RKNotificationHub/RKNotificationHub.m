@@ -85,6 +85,26 @@ static const float BUMP_TIME_2 = 0.1;
     [countLabel setFont:[UIFont fontWithName:@"HelveticaNeue" size:frame.size.width/2]];
 }
 
+//%%% moves the circle by x amount on the x axis and y amount on the y axis
+-(void)moveCircleByX:(CGFloat)x Y:(CGFloat)y
+{
+    CGRect frame = redCircle.frame;
+    frame.origin.x += x;
+    frame.origin.y += y;
+    [self setCircleAtFrame:frame];
+}
+
+//%%% changes the size of the circle. setting a scale of 1 has no effect
+-(void)scaleCircleSizeBy:(CGFloat)scale
+{
+    CGRect fr = redCircle.frame;
+    CGFloat diam = fr.size.width * scale;
+    CGFloat diff = (fr.size.width - diam)/2;
+    
+    CGRect frame = CGRectMake(fr.origin.x + diff, fr.origin.y + diff, diam, diam);
+    [self setCircleAtFrame:frame];
+}
+
 //%%% change the color of the notification circle
 -(void)setCircleColor:(UIColor*)circleColor labelColor:(UIColor*)labelColor
 {

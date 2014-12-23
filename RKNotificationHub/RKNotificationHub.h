@@ -43,6 +43,8 @@
 -(void)setView:(UIView *)view andCount:(int)startCount;
 -(void)setCircleAtFrame:(CGRect)frame;
 -(void)setCircleColor:(UIColor*)circleColor labelColor:(UIColor*)labelColor;
+-(void)moveCircleByX:(CGFloat)x Y:(CGFloat)y;
+-(void)scaleCircleSizeBy:(CGFloat)scale;
 
 //%%% changing the count
 -(void)increment;
