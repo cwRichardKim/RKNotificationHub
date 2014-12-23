@@ -20,6 +20,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIButton *button = [self setupButton];
+    
+    hub = [[RKNotificationHub alloc]initWithView:button];
+}
+
+-(UIButton *)setupButton
+{
     UIColor* color = [UIColor colorWithRed:.15 green:.67 blue:.88 alpha:1];
     
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(50, 100, 200, 60)];
@@ -27,13 +34,10 @@
     [button setTitle:@"Messages" forState:UIControlStateNormal];
     [button setBackgroundColor:color];
     button.layer.cornerRadius = 5;
-    
-    
     [button addTarget:self action:@selector(testIncrement) forControlEvents:UIControlEventTouchUpInside];
-    
+
     [self.view addSubview:button];
-    
-    hub = [[RKNotificationHub alloc]initWithView:button];
+    return button;
 }
 
 -(void)testIncrement
