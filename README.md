@@ -24,22 +24,6 @@ __Other Options__
   -(void)setCount:(int)newCount; //%%% set to a certain number
 ```
 
-###ANIMATIONS
-![pop](http://i.imgur.com/g6tMepj.gif)
-``` objc
-  [hub pop];
-```
-
-![bump](http://i.imgur.com/B2l0LDJ.gif)
-``` objc
-  [hub bump];
-```
-
-![blink](http://i.imgur.com/9XJ8dfP.gif)
-``` objc
-  [hub blink];
-```
-
 __Combine Actions!__
 
 ![blink](http://i.imgur.com/boGyL9T.gif)
