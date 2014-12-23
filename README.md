@@ -7,8 +7,8 @@ A way to quickly add a notification icon to a UIView
 
 Code:
 ``` objc
-  RKNotificationHub* hub = [[RKNotificationHub alloc]initWithView:yourView];
-  [hub increment];
+  RKNotificationHub* hub = [[RKNotificationHub alloc]initWithView:yourView]; // sets the count to 0
+  [hub increment]; // increments the count to 1, making the notification visible
 ```
 
 ###USAGE
