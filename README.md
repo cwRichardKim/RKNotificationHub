@@ -46,7 +46,7 @@ __Combine Actions!__
   [hub setCircleAtFrame:CGRectMake(-10, -10, 30, 30)]; //frame relative to the view you set it to
   
   //%%% MOVE FRAME
-  [hub moveCircleByX:-5 Y:5]; // moves the circle 5 pixels left and down
+  [hub moveCircleByX:-5 Y:5]; // moves the circle 5 pixels left and down from its current position
   
   //%%% CIRCLE SIZE
   [hub scaleCircleSizeBy:2]; // doubles the size of the circle, keeps the same center
