@@ -5,7 +5,7 @@ A way to quickly add a notification icon to a UIView
 
 ###DEMO
 
-Take any button
+Take any view
 
 ![demo](http://i.imgur.com/LG2EEB6.gif)
 
