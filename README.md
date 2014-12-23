@@ -43,5 +43,11 @@ __Combine Actions!__
 ![frame](http://i.imgur.com/6w9WaO4.png?1)
 ```objc
   //%%% CIRCLE FRAME
-  [hub setCircleAtFrame:CGRectMake(-10, -10, 30, 30)];
+  [hub setCircleAtFrame:CGRectMake(-10, -10, 30, 30)]; //frame relative to the view you set it to
+  
+  //%%% MOVE FRAME
+  [hub moveCircleByX:-5 Y:5]; // moves the circle 5 pixels left and down
+  
+  //%%% CIRCLE SIZE
+  [hub scaleCircleSizeBy:2]; // doubles the size of the circle, keeps the same center
 ```
