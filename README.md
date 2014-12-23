@@ -58,7 +58,7 @@ __Combine Actions!__
 * Make sure the view you set the hub to is visible (i.e. did you call [self.view addSubview: yourView]?)
 
 **It isn't incrementing / decrementing properly!**
-* I've written it so that any count < 1 doesn't show up. If you need help undoing this, reach out to me
+* I've written it so that any count < 1 doesn't show up. If you need help customizing this, reach out to me
 * Calling [decrement] will never bring the count below 0, but calling [decrementBy:] or [setCount:] will allow negative values (negative values still won't show up)
 
 **The circle is in a weird place**
