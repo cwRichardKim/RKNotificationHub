@@ -3,17 +3,17 @@ RKNotificationHub
 
 A way to quickly add a notification icon to a UIView
 
-###Pod
-```
-    pod 'RKNotificationHub'
-```
-
 ![demo](http://i.imgur.com/SpE2BQv.gif)
 
 Code:
 ``` objc
   RKNotificationHub* hub = [[RKNotificationHub alloc]initWithView:yourView]; // sets the count to 0
   [hub increment]; // increments the count to 1, making the notification visible
+```
+
+###Pod
+```
+    pod 'RKNotificationHub'
 ```
 
 ###USAGE
