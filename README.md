@@ -1,7 +1,7 @@
 RKNotificationHub
 =================
 
-A way to quickly add a notification icon to a UIButton
+A way to quickly add a notification icon to a UIView
 
 ###DEMO
 
@@ -11,8 +11,7 @@ Take any button
 
 Code:
 ``` objc
-  RKNotificationHub* hub = [[RKNotificationHub alloc]init];
-  [hub setButton:button andCount:1]; //%%% the initial count
+  RKNotificationHub* hub = [[RKNotificationHub alloc]initWithView:yourView];
 ```
 
 ###USAGE
@@ -26,15 +25,7 @@ __Other Options__
   -(void)incrementBy:(int)amount;
   -(void)decrement;
   -(void)decrementBy:(int)amount;
-  -(void)setCount:(int)currentCount; //%%% set to a certain number
-  
-  //%%% using a set (see below)
-  @property (nonatomic)NSMutableSet* objectsSet;
-  -(void)updateWithSetCount;
-  
-  //%%% using an array
-  @property (nonatomic)NSMutableArray* objectArray;
-  -(void)updateWithArrayCount;
+  -(void)setCount:(int)newCount; //%%% set to a certain number
 ```
 
 ###ANIMATIONS
@@ -74,38 +65,3 @@ __Combine Actions!__
   //%%% CIRCLE FRAME
   [hub setCircleAtFrame:CGRectMake(-10, -10, 30, 30)];
 ```
-
-
-###USING SETS OR ARRAYS
-If you have your own array (say an array of notifications or an array of messages), you can use this section so that you don't have to manually change the count
-
-```objc
-  //%%% using a set
-  @property (nonatomic)NSMutableSet* objectSet;
-  -(void)updateWithSetCount;
-  
-  //%%% using an array
-  @property (nonatomic)NSMutableArray* objectArray;
--(void)updateWithArrayCount;
-```
-Using a set
-```objc
-  hub.objectSet = yourSet;
-  [hub updateWithSetCount];
-  
-  //%%% or
-  [hub.objectSet addObject:@"a unique id of a message"];
-  [hub updateWithSetCount];
-  //%%% this will increment the count by one if that id doesn't already exist in the set
-```
-Using an array
-```objc
-  hub.objectArray = yourArray;
-  [hub updateWithArrayCount];
-  
-  //%%% or
-  [hub.objectArray addObject:@"a unique id of a message"];
-  [hub updateWithArrayCount];
-  //%%% this will increment the count by one regardless of whether that id exists already
-```
-Of course you can do the other standard set / array operations (removing objects, printing them, looping through them, etc)
