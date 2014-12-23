@@ -3,6 +3,11 @@ RKNotificationHub
 
 A way to quickly add a notification icon to a UIView
 
+###Pod
+```
+    pod 'RKNotificationHub'
+```
+
 ![demo](http://i.imgur.com/SpE2BQv.gif)
 
 Code:
