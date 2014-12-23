@@ -15,7 +15,6 @@ Code:
 ``` objc
   [hub increment];
 ```
-__Other Options__
 ``` objc
   -(void)increment;
   -(void)incrementBy:(int)amount;
