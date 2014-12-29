@@ -57,14 +57,18 @@ __Combine Actions!__
   [hub scaleCircleSizeBy:2]; // doubles the size of the circle, keeps the same center
 ```
 
+![blank](http://i.imgur.com/rhiKOPH.png)
+``` objc
+  //%%% BLANK BADGE
+  [hub hideCount];
+  /* shoutout to imkevinxu for this suggestion */
+```
+
 ###TROUBLESHOOTING
 **Notification isn't showing up!**
 * If the hub value is < 1, the circle hides.  Try calling [increment]
 * Make sure the view you set the hub to is visible (i.e. did you call [self.view addSubview: yourView]?)
 * Make sure you're not in indeterminate mode (if you call [hideCount] anywhere, the red bubble will no longer show a number)
-
-**Can I hide the number and keep the bubble?**
-* Yes! shoutout to imkevinxu for this suggestion.  Use [hideCount] and [showCount] to switch between having a numbered and blank badge
 
 **It isn't incrementing / decrementing properly!**
 * I've written it so that any count < 1 doesn't show up. If you need help customizing this, reach out to me
