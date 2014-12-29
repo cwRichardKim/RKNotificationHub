@@ -33,6 +33,7 @@ static const float BUMP_TIME_2 = 0.1;
     UIView *redCircle;
     CGPoint initialCenter;
     CGRect initialFrame;
+    BOOL isIntermediatMode;
 }
 @synthesize hubView;
 
@@ -53,6 +54,8 @@ static const float BUMP_TIME_2 = 0.1;
 -(void)setView:(UIView *)view andCount:(int)startCount
 {
     CGRect frame = view.frame;
+    
+    isIntermediatMode = NO;
     
     redCircle = [[UIView alloc]init];
     redCircle.userInteractionEnabled = NO;
@@ -112,6 +115,18 @@ static const float BUMP_TIME_2 = 0.1;
     [countLabel setTextColor:labelColor];
 }
 
+-(void)hideCount
+{
+    countLabel.hidden = YES;
+    isIntermediatMode = YES;
+}
+
+-(void)showCount
+{
+    countLabel.hidden = NO;
+    isIntermediatMode = NO;
+}
+
 #pragma mark - ATTRIBUTES
 
 //%%% increases count by 1
@@ -147,6 +162,11 @@ static const float BUMP_TIME_2 = 0.1;
     count = newCount;
     countLabel.text = [NSString stringWithFormat:@"%i",count];
     [self checkZero];
+}
+
+-(int)count
+{
+    return count;
 }
 
 #pragma mark - ANIMATION
@@ -317,7 +337,9 @@ static const float BUMP_TIME_2 = 0.1;
         countLabel.hidden = YES;
     } else {
         redCircle.hidden = NO;
-        countLabel.hidden = NO;
+        if (!isIntermediatMode) {
+            countLabel.hidden = NO;
+        }
     }
 }
 

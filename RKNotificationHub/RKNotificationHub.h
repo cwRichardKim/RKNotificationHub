@@ -52,6 +52,11 @@
 -(void)decrement;
 -(void)decrementBy:(int)amount;
 -(void)setCount:(int)newCount;
+-(int)count; // returns the count (treat as get method)
+
+//%%% hiding / showing the count
+-(void)hideCount;
+-(void)showCount;
 
 //%%% animations
 -(void)pop;
