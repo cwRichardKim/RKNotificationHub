@@ -68,7 +68,7 @@ __Combine Actions!__
 **Notification isn't showing up!**
 * If the hub value is < 1, the circle hides.  Try calling [increment]
 * Make sure the view you set the hub to is visible (i.e. did you call [self.view addSubview: yourView]?)
-* Make sure you're not in indeterminate mode (if you call [hideCount] anywhere, the red bubble will no longer show a number)
+* Make sure you didn't call [hideCount] anywhere. Call [showCount] to counter this
 
 **It isn't incrementing / decrementing properly!**
 * I've written it so that any count < 1 doesn't show up. If you need help customizing this, reach out to me
