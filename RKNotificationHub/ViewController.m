@@ -26,6 +26,8 @@
     
     hub = [[RKNotificationHub alloc]initWithView:imageView];
     [hub moveCircleByX:-5 Y:5]; // moves the circle five pixels left and 5 down
+//    [hub hideCount]; // uncomment for a blank badge
+    
     [self.view addSubview:imageView];
 }
 
