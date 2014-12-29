@@ -61,6 +61,10 @@ __Combine Actions!__
 **Notification isn't showing up!**
 * If the hub value is < 1, the circle hides.  Try calling [increment]
 * Make sure the view you set the hub to is visible (i.e. did you call [self.view addSubview: yourView]?)
+* Make sure you're not in indeterminate mode (if you call [hideCount] anywhere, the red bubble will no longer show a number)
+
+**Can I hide the number and keep the bubble?**
+* Yes! shoutout to imkevinxu for this suggestion.  Use [hideCount] and [showCount] to switch between having a numbered and blank badge
 
 **It isn't incrementing / decrementing properly!**
 * I've written it so that any count < 1 doesn't show up. If you need help customizing this, reach out to me
@@ -75,3 +79,9 @@ __Combine Actions!__
 * Send me a tweet @cwRichardKim with #RKNotificationHub so that other people can search these issues too
 * Use github's issue reporter on the right
 * Send me an email cwRichardKim@gmail.com (might take a few days)
+
+
+### Updates
+* 1.0.0 first release with cocoapod
+* 1.0.1 cocoapod allows iOS 7.0
+* 1.0.2 added "hideCount", "showCount", and "count" methods, allowing indeterminate badges with no number
