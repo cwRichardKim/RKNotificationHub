@@ -33,7 +33,7 @@ static const float BUMP_TIME_2 = 0.1;
     UIView *redCircle;
     CGPoint initialCenter;
     CGRect initialFrame;
-    BOOL isIntermediatMode;
+    BOOL isIndeterminateMode;
 }
 @synthesize hubView;
 
@@ -55,7 +55,7 @@ static const float BUMP_TIME_2 = 0.1;
 {
     CGRect frame = view.frame;
     
-    isIntermediatMode = NO;
+    isIndeterminateMode = NO;
     
     redCircle = [[UIView alloc]init];
     redCircle.userInteractionEnabled = NO;
@@ -118,13 +118,13 @@ static const float BUMP_TIME_2 = 0.1;
 -(void)hideCount
 {
     countLabel.hidden = YES;
-    isIntermediatMode = YES;
+    isIndeterminateMode = YES;
 }
 
 -(void)showCount
 {
     countLabel.hidden = NO;
-    isIntermediatMode = NO;
+    isIndeterminateMode = NO;
 }
 
 #pragma mark - ATTRIBUTES
@@ -337,7 +337,7 @@ static const float BUMP_TIME_2 = 0.1;
         countLabel.hidden = YES;
     } else {
         redCircle.hidden = NO;
-        if (!isIntermediatMode) {
+        if (!isIndeterminateMode) {
             countLabel.hidden = NO;
         }
     }
