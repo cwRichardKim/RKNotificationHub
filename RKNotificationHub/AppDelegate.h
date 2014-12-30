@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Richard Kim. All rights reserved.
 //
 
+/* Credits: Earth Icon made by http://www.icomoon.io */
+
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
