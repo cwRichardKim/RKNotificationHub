@@ -123,8 +123,8 @@ static const float BUMP_TIME_2 = 0.1;
 
 -(void)showCount
 {
-    countLabel.hidden = NO;
     isIndeterminateMode = NO;
+    [self checkZero];
 }
 
 #pragma mark - ATTRIBUTES
