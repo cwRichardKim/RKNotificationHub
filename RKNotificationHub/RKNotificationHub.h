@@ -51,6 +51,7 @@ enum notificationPosition {
 -(void)setView:(UIView *)view andCount:(int)startCount atPosition:(enum notificationPosition)position;
 -(void)setCircleAtFrame:(CGRect)frame;
 -(void)setCircleAtPosition:(enum notificationPosition)position inView:(UIView*)view;
+-(void)setCircleColor:(UIColor*)circleColor labelColor:(UIColor*)labelColor;
 -(void)moveCircleByX:(CGFloat)x Y:(CGFloat)y;
 -(void)scaleCircleSizeBy:(CGFloat)scale;
 

@@ -54,7 +54,7 @@ __Combine Actions!__
   [hub moveCircleByX:-5 Y:5]; // moves the circle 5 pixels left and down from its current position
 
   //%%% SHOW CIRCLE IN VIEW CORNER
-  [hub setCircleAtPosition:TopLeft inView: view //TopLeft, TopRight, BottomLeft, BottomRight
+  [hub setCircleAtPosition:TopLeft inView: view] //TopLeft, TopRight, BottomLeft, BottomRight
 
   
   //%%% CIRCLE SIZE
