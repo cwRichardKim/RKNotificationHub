@@ -44,17 +44,15 @@ static const float BUMP_TIME_2 = 0.1;
     self = [super init];
     if (!self) return nil;
     
-    [self setView:view andCount:0];
+    [self setView:view andCount:0 atPosition:TopRight];
     
     return self;
 }
 
 //%%% give this a view and an initial count (0 hides the notification circle)
 // and it will make a hub for you
--(void)setView:(UIView *)view andCount:(int)startCount
-{
-    CGRect frame = view.frame;
-    
+-(void)setView:(UIView *)view andCount:(int)startCount atPosition: (enum notificationPosition)position
+{    
     isIndeterminateMode = NO;
     
     redCircle = [[UIView alloc]init];
@@ -67,7 +65,7 @@ static const float BUMP_TIME_2 = 0.1;
     [countLabel setTextAlignment:NSTextAlignmentCenter];
     countLabel.textColor = [UIColor whiteColor];
     
-    [self setCircleAtFrame:CGRectMake(frame.size.width-(DIAMETER*2/3), -DIAMETER/3, DIAMETER, DIAMETER)];
+    [self setCircleAtPosition:position inView:view];
     
     [view addSubview:redCircle];
     [view addSubview:countLabel];
@@ -86,6 +84,28 @@ static const float BUMP_TIME_2 = 0.1;
     countLabel.frame = redCircle.frame;
     redCircle.layer.cornerRadius = frame.size.width/2;
     [countLabel setFont:[UIFont fontWithName:@"HelveticaNeue" size:frame.size.width/2]];
+}
+
+//%%% set the location of the notification circle to a view corner
+-(void) setCircleAtPosition:(enum notificationPosition)position inView:(UIView*)view{
+    switch (position)
+    {
+        case TopLeft:
+            [self setCircleAtFrame:CGRectMake(-DIAMETER/3, -DIAMETER/3, DIAMETER, DIAMETER)];
+            break;
+        case TopRight:
+            [self setCircleAtFrame:CGRectMake(view.frame.size.width-(DIAMETER*2/3), -DIAMETER/3, DIAMETER, DIAMETER)];
+            break;
+        case BottomLeft:
+            [self setCircleAtFrame:CGRectMake(-DIAMETER/3, view.frame.size.height-(DIAMETER*2/3), DIAMETER, DIAMETER)];
+            break;
+        case BottomRight:
+            [self setCircleAtFrame:CGRectMake(view.frame.size.width-(DIAMETER*2/3), view.frame.size.height-(DIAMETER*2/3), DIAMETER, DIAMETER)];
+            break;
+        default:
+            [self setCircleAtFrame:CGRectMake(view.frame.size.width-(DIAMETER*2/3), -DIAMETER/3, DIAMETER, DIAMETER)];
+            break;
+    }
 }
 
 //%%% moves the circle by x amount on the x axis and y amount on the y axis
