@@ -89,3 +89,7 @@ __Combine Actions!__
 * 1.0.0 first release with cocoapod
 * 1.0.1 cocoapod allows iOS 7.0
 * 1.0.2 added "hideCount", "showCount", and "count" methods, allowing indeterminate badges with no number
+
+### Areas for Improvements / involvement
+* A mechanism for adding a custom animation
+* Singleton option
