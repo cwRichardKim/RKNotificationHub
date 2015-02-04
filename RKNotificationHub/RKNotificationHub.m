@@ -26,11 +26,27 @@ static const float BUMP_TIME = 0.13;
 static const float SECOND_BUMP_DIST = 4;
 static const float BUMP_TIME_2 = 0.1;
 
+@interface RKView : UIView
+@property (nonatomic) BOOL isUserChangingBackgroundColor;
+@end
+
+@implementation RKView
+
+-(void)setBackgroundColor:(UIColor *)backgroundColor
+{
+    if (self.isUserChangingBackgroundColor) {
+        super.backgroundColor = backgroundColor;
+        self.isUserChangingBackgroundColor = NO;
+    }
+}
+
+@end
+
 
 @implementation RKNotificationHub {
     int count;
     UILabel* countLabel;
-    UIView *redCircle;
+    RKView *redCircle;
     CGPoint initialCenter;
     CGRect initialFrame;
     BOOL isIndeterminateMode;
@@ -57,8 +73,9 @@ static const float BUMP_TIME_2 = 0.1;
     
     isIndeterminateMode = NO;
     
-    redCircle = [[UIView alloc]init];
+    redCircle = [[RKView alloc]init];
     redCircle.userInteractionEnabled = NO;
+    redCircle.isUserChangingBackgroundColor = YES;
     redCircle.backgroundColor = [UIColor redColor];
     
     countLabel = [[UILabel alloc]initWithFrame:redCircle.frame];
@@ -111,6 +128,7 @@ static const float BUMP_TIME_2 = 0.1;
 //%%% change the color of the notification circle
 -(void)setCircleColor:(UIColor*)circleColor labelColor:(UIColor*)labelColor
 {
+    redCircle.isUserChangingBackgroundColor = YES;
     redCircle.backgroundColor = circleColor;
     [countLabel setTextColor:labelColor];
 }
