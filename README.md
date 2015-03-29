@@ -64,6 +64,11 @@ __Combine Actions!__
   /* shoutout to imkevinxu for this suggestion */
 ```
 
+![adjust](http://i.imgur.com/cpQuShT.gif)
+
+Adjusts to larger numbers
+
+
 ###TROUBLESHOOTING
 **Notification isn't showing up!**
 * If the hub value is < 1, the circle hides.  Try calling [increment]
