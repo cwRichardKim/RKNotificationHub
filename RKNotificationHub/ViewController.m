@@ -34,7 +34,7 @@
 -(void)testIncrement
 {
     [hub increment];
-    
+
     [hub pop];
 //    [hub blink];
 //    [hub bump];
