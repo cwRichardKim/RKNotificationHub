@@ -37,31 +37,31 @@
 @interface RKNotificationHub : NSObject
 
 //%%% setup
--(id)initWithView:(UIView *)view;
+- (id)initWithView:(UIView *)view;
 
 //%%% adjustment methods
--(void)setView:(UIView *)view andCount:(int)startCount;
--(void)setCircleAtFrame:(CGRect)frame;
--(void)setCircleColor:(UIColor*)circleColor labelColor:(UIColor*)labelColor;
--(void)moveCircleByX:(CGFloat)x Y:(CGFloat)y;
--(void)scaleCircleSizeBy:(CGFloat)scale;
+- (void)setView:(UIView *)view andCount:(int)startCount;
+- (void)setCircleAtFrame:(CGRect)frame;
+- (void)setCircleColor:(UIColor*)circleColor labelColor:(UIColor*)labelColor;
+- (void)moveCircleByX:(CGFloat)x Y:(CGFloat)y;
+- (void)scaleCircleSizeBy:(CGFloat)scale;
 
 //%%% changing the count
--(void)increment;
--(void)incrementBy:(int)amount;
--(void)decrement;
--(void)decrementBy:(int)amount;
--(void)setCount:(int)newCount;
--(int)count; // returns the count (treat as get method)
+- (void)increment;
+- (void)incrementBy:(int)amount;
+- (void)decrement;
+- (void)decrementBy:(int)amount;
+- (void)setCount:(int)newCount;
+- (int)count; // returns the count (treat as get method)
 
 //%%% hiding / showing the count
--(void)hideCount;
--(void)showCount;
+- (void)hideCount;
+- (void)showCount;
 
 //%%% animations
--(void)pop;
--(void)blink;
--(void)bump;
+- (void)pop;
+- (void)blink;
+- (void)bump;
 
 @property (nonatomic)UIView *hubView;
 

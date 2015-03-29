@@ -40,6 +40,37 @@
 //    [hub bump];
 }
 
+- (void)stressTest {
+    [hub setCount:pow(10, arc4random_uniform(5))];
+    int rand = arc4random_uniform(7);
+    switch (rand)
+    {
+        case 0:
+            [hub scaleCircleSizeBy: 1.2];
+            break;
+        case 1:
+            [hub scaleCircleSizeBy: .833];
+            break;
+        default:
+            break;
+    }
+    rand = arc4random_uniform(4);
+    switch (rand)
+    {
+        case 0:
+            [hub pop];
+            break;
+        case 1:
+            [hub blink];
+            break;
+        case 2:
+            [hub bump];
+            break;
+        default:
+            break;
+    }
+}
+
 -(void)setupButton
 {
     UIColor* color = [UIColor colorWithRed:.15 green:.67 blue:.88 alpha:1];
