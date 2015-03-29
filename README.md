@@ -64,10 +64,6 @@ __Combine Actions!__
   /* shoutout to imkevinxu for this suggestion */
 ```
 
-![adjust](http://i.imgur.com/cpQuShT.gif)
-
-Adjusts to larger numbers
-
 
 ###TROUBLESHOOTING
 **Notification isn't showing up!**
@@ -94,7 +90,7 @@ Adjusts to larger numbers
 * 1.0.0 first release with cocoapod
 * 1.0.1 cocoapod allows iOS 7.0
 * 1.0.2 added "hideCount", "showCount", and "count" methods, allowing indeterminate badges with no number
-* 1.0.5 added bubble expansion for larger numbers
+* 1.0.5 added bubble expansion for larger numbers [(gif)](http://i.imgur.com/cpQuShT.gif)
 
 ### Areas for Improvements / involvement
 * A mechanism for adding a custom animation
