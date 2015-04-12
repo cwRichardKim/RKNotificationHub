@@ -38,6 +38,7 @@
 
 //%%% setup
 - (id)initWithView:(UIView *)view;
+- (id)initWithViewBarButtonItem:(UIBarButtonItem *)barButtonItem;
 
 //%%% adjustment methods
 - (void)setView:(UIView *)view andCount:(int)startCount;

@@ -69,6 +69,15 @@ CGFloat kBumpTimeSeconds2 = 0.1;
     return self;
 }
 
+- (id)initWithViewBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+  self = [self initWithView:[barButtonItem valueForKey:@"view"]];
+  [self scaleCircleSizeBy:0.7];
+  [self moveCircleByX:-5.0 Y:0];
+  
+  return self;
+}
+
 //%%% give this a view and an initial count (0 hides the notification circle)
 // and it will make a hub for you
 - (void)setView:(UIView *)view andCount:(int)startCount
