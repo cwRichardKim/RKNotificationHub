@@ -11,7 +11,9 @@
 
 @interface ViewController () {
     RKNotificationHub *hub;
+    RKNotificationHub *barHub;
 }
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *barButtonItem;
 
 @end
 
@@ -27,8 +29,16 @@
     hub = [[RKNotificationHub alloc]initWithView:imageView];
     [hub moveCircleByX:-5 Y:5]; // moves the circle five pixels left and 5 down
 //    [hub hideCount]; // uncomment for a blank badge
-    
+  
+    barHub = [[RKNotificationHub alloc] initWithViewBarButtonItem: _barButtonItem];
+  
     [self.view addSubview:imageView];
+}
+
+
+- (IBAction)barButtonPressed:(id)sender {
+  [barHub increment];
+  [barHub pop];
 }
 
 -(void)testIncrement
