@@ -30,7 +30,7 @@
     [hub moveCircleByX:-5 Y:5]; // moves the circle five pixels left and 5 down
 //    [hub hideCount]; // uncomment for a blank badge
   
-    barHub = [[RKNotificationHub alloc] initWithViewBarButtonItem: _barButtonItem];
+    barHub = [[RKNotificationHub alloc] initWithBarButtonItem: _barButtonItem];
   
     [self.view addSubview:imageView];
 }

@@ -69,7 +69,7 @@ CGFloat kBumpTimeSeconds2 = 0.1;
     return self;
 }
 
-- (id)initWithViewBarButtonItem:(UIBarButtonItem *)barButtonItem
+- (id)initWithBarButtonItem:(UIBarButtonItem *)barButtonItem
 {
   self = [self initWithView:[barButtonItem valueForKey:@"view"]];
   [self scaleCircleSizeBy:0.7];
