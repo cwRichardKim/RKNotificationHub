@@ -1,2 +1,7 @@
 .idea
 .DS_Store
+xcuserdata
+
+#CocoaPods
+Pods
+*.xcworkspace
