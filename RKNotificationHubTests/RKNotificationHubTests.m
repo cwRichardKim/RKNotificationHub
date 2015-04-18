@@ -1,40 +1,165 @@
-//
-//  RKNotificationHubTests.m
-//  RKNotificationHubTests
-//
-//  Created by Richard Kim on 9/30/14.
-//  Copyright (c) 2014 Richard Kim. All rights reserved.
-//
+#import <Specta/Specta.h>
+#import <Expecta/Expecta.h>
+#import <FBSnapshotTestCase/FBSnapshotTestCase.h>
+#import <Expecta+Snapshots/EXPMatchers+FBSnapshotTest.h>
+#import <OCMock/OCMock.h>
 
-#import <UIKit/UIKit.h>
-#import <XCTest/XCTest.h>
+#import "RKNotificationHub.h"
 
-@interface RKNotificationHubTests : XCTestCase
+SpecBegin(RKNotificationHub)
 
-@end
+// setup
 
-@implementation RKNotificationHubTests
+describe(@"initWithView:", ^{
+    __block UIView *view;
+    __block RKNotificationHub *subject;
+    
+    beforeAll(^{
+        view = [[UIView alloc] initWithFrame:CGRectZero];
+        subject = [[RKNotificationHub alloc] initWithView:view];
+    });
+    
+    it(@"should initialize hub with given view as hubView", ^{
+        expect(subject.hubView).to.equal(view);
+    });
+    
+    it(@"should initialize hub with count 0", ^{
+        expect([subject count]).to.equal(0);
+    });
+});
 
-- (void)setUp {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
+describe(@"setView:andCount:", ^{
+    __block UIView *view;
+    __block RKNotificationHub *subject;
+    
+    beforeAll(^{
+        view = [[UIView alloc] initWithFrame:CGRectZero];
+        subject = [[RKNotificationHub alloc] initWithView:nil];
+        [subject setView:view andCount:2];
+    });
+    
+    it(@"should set hub view", ^{
+        expect(subject.hubView).to.equal(view);
+    });
+    
+    it(@"should set count", ^{
+        expect([subject count]).to.equal(2);
+    });
+});
 
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
+// changing the count
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
-}
+describe(@"increment", ^{
+    
+});
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
+describe(@"incrementBy:", ^{
+    
+});
 
-@end
+describe(@"decrement", ^{
+    
+});
+
+describe(@"decrementBy:", ^{
+    
+});
+
+describe(@"setCount:", ^{
+    
+});
+
+describe(@"count", ^{
+    
+});
+
+// hiding / showing the count
+
+describe(@"hideCount", ^{
+    
+});
+
+describe(@"showCount", ^{
+    
+});
+
+// animations
+
+describe(@"pop", ^{
+    
+});
+
+describe(@"blink", ^{
+    
+});
+
+describe(@"bump", ^{
+    
+});
+
+// snapshots
+
+describe(@"visuals", ^{
+    __block UIView *backgroundView;
+    __block UIView *targetView;
+    __block RKNotificationHub *subject;
+    
+    before(^{
+        backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 200.0, 200.0)];
+        
+        targetView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 100.0, 40.0)];
+        targetView.center = backgroundView.center;
+        [targetView setBackgroundColor:[UIColor lightGrayColor]];
+        
+        [backgroundView addSubview:targetView];
+        
+        subject = [[RKNotificationHub alloc] initWithView:targetView];
+        [subject setCount:5];
+    });
+
+    it(@"should not display notification icon when count is 0", ^{
+        [subject setCount:0];
+        expect(backgroundView).to.haveValidSnapshot();
+    });
+    
+    it(@"should display notification icon when count is not zero", ^{
+        expect(backgroundView).to.haveValidSnapshotNamed(@"default_5");
+    });
+    
+    it(@"should have red background and white label by default", ^{
+        expect(backgroundView).to.haveValidSnapshotNamed(@"default_5");
+    });
+    
+    it(@"should display the icon centered in the top right corner of the target view by default", ^{
+        expect(backgroundView).to.haveValidSnapshotNamed(@"default_5");
+    });
+    
+    it(@"should adjust icon width for larger count", ^{
+        [subject setCount:375];
+        expect(backgroundView).to.haveValidSnapshot();
+    });
+    
+    describe(@"adjustment methods", ^{
+        it(@"should look right with updated notification icon frame", ^{
+            [subject setCircleAtFrame:CGRectMake(25.0, 30.0, 20.0, 15.0)];
+            expect(backgroundView).to.haveValidSnapshot();
+        });
+        
+        it(@"should look right with updated circle color and label color ", ^{
+            [subject setCircleColor:[UIColor yellowColor] labelColor:[UIColor blackColor]];
+            expect(backgroundView).to.haveValidSnapshot();
+        });
+        
+        it(@"should look right with moved notification icon", ^{
+            [subject moveCircleByX:-20.0 Y:30.0];
+            expect(backgroundView).to.haveValidSnapshot();
+        });
+        
+        it(@"should look right with scaled notification icon", ^{
+            [subject scaleCircleSizeBy:1.5];
+            expect(backgroundView).to.haveValidSnapshot();
+        });
+    });
+});
+
+SpecEnd
