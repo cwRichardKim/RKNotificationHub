@@ -6,6 +6,19 @@
 
 #import "RKNotificationHub.h"
 
+@implementation UIView(SpecFlywheel)
+
++ (void)animateWithDuration:(NSTimeInterval)duration
+                 animations:(void (^)(void))animations
+                 completion:(void (^)(BOOL finished))completion {
+    if (animations)
+        animations();
+    if (completion)
+        completion(YES);
+}
+
+@end
+
 SpecBegin(RKNotificationHub)
 
 // setup
@@ -235,6 +248,29 @@ describe(@"visuals", ^{
             [subject hideCount];
             [subject showCount];
             expect(backgroundView).to.haveValidSnapshotNamed(@"default_5");
+        });
+    });
+    
+    describe(@"animations", ^{
+        describe(@"pop", ^{
+            it(@"should look right when animation is completed", ^{
+                [subject pop];
+                expect(backgroundView).to.haveValidSnapshotNamed(@"default_5");
+            });
+        });
+        
+        describe(@"blink", ^{
+            it(@"should look right when animation is completed", ^{
+                [subject blink];
+                expect(backgroundView).to.haveValidSnapshotNamed(@"default_5");
+            });
+        });
+        
+        describe(@"bump", ^{
+            it(@"should look right when animation is completed", ^{
+                [subject bump];
+                expect(backgroundView).to.haveValidSnapshotNamed(@"default_5");
+            });
         });
     });
 });
