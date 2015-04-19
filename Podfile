@@ -10,6 +10,5 @@ target 'RKNotificationHubTests' do
 	pod 'Expecta+Snapshots'
 	pod 'Specta'
 	pod 'Expecta'
-	pod 'OCMock'
 end
 
