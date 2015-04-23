@@ -364,20 +364,6 @@ CGFloat kBumpTimeSeconds2 = 0.1;
     countLabel.alpha = alpha;
 }
 
-//%%% used for pop animation to change the diameter
-- (CGRect)nextRectWithDiameter:(float)diameter
-{
-    const float initialD = baseFrame.size.width;
-    float buffer = (initialD - diameter)/2;
-    
-    CGRect frame = redCircle.frame;
-    frame.size.height = diameter;
-    frame.size.width = diameter;
-    frame.origin.x = redCircle.frame.origin.x + buffer;
-    frame.origin.y = redCircle.frame.origin.y + buffer;
-    return frame;
-}
-
 //%%% hides the notification if the value is 0
 - (void)checkZero
 {

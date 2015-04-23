@@ -24,13 +24,14 @@
     [self setupButton];
     
     UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"earth"]];
-    imageView.frame = CGRectMake(self.view.frame.size.width/2 - 35, 70, 70, 70);
+    imageView.frame = CGRectMake(self.view.frame.size.width/2 - 35, 120, 70, 70);
     
     hub = [[RKNotificationHub alloc]initWithView:imageView];
     [hub moveCircleByX:-5 Y:5]; // moves the circle five pixels left and 5 down
 //    [hub hideCount]; // uncomment for a blank badge
   
     barHub = [[RKNotificationHub alloc] initWithBarButtonItem: _barButtonItem];
+    [barHub increment];
   
     [self.view addSubview:imageView];
 }
@@ -50,6 +51,7 @@
 //    [hub bump];
 }
 
+// (ignore this, for personal stress testing purposes)
 - (void)stressTest {
     [hub setCount:pow(10, arc4random_uniform(5))];
     int rand = arc4random_uniform(7);
