@@ -35,6 +35,7 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)barButtonPressed:(id)sender;
 
 @end
 
