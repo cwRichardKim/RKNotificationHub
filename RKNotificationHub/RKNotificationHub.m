@@ -207,6 +207,12 @@ CGFloat kBumpTimeSeconds2 = 0.1;
     return count;
 }
 
+//%% set the font of the label
+- (void)setCountLabelFont:(UIFont *)font
+{
+    [countLabel setFont:[UIFont fontWithName:font.fontName size:redCircle.frame.size.width/2]];
+}
+
 #pragma mark - ANIMATION
 
 //%%% animation that resembles facebook's pop

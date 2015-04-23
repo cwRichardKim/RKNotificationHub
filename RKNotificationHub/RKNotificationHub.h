@@ -46,6 +46,7 @@
 - (void)setCircleColor:(UIColor*)circleColor labelColor:(UIColor*)labelColor;
 - (void)moveCircleByX:(CGFloat)x Y:(CGFloat)y;
 - (void)scaleCircleSizeBy:(CGFloat)scale;
+- (void)setCountLabelFont:(UIFont *)font;
 
 //%%% changing the count
 - (void)increment;
