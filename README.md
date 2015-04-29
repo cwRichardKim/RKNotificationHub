@@ -1,9 +1,6 @@
 RKNotificationHub
 =================
 
-[![Build Status](https://travis-ci.org/cevitcejbo/RKNotificationHub.svg?branch=master)](https://travis-ci.org/cevitcejbo/RKNotificationHub)
-[![Coverage Status](https://coveralls.io/repos/cevitcejbo/RKNotificationHub/badge.svg?branch=master)](https://coveralls.io/r/cevitcejbo/RKNotificationHub?branch=master)
-
 A way to quickly add a notification icon to a UIView
 
 ![demo](http://i.imgur.com/SpE2BQv.gif)

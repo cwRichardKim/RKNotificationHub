@@ -16,7 +16,6 @@
 		998DB1CF19DAEA72006655C8 /* RKNotificationHubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 998DB1CE19DAEA72006655C8 /* RKNotificationHubTests.m */; };
 		998DB1DA19DAEE12006655C8 /* RKNotificationHub.m in Sources */ = {isa = PBXBuildFile; fileRef = 998DB1D919DAEE12006655C8 /* RKNotificationHub.m */; };
 		998DB1E219DAFE9D006655C8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 998DB1E119DAFE9D006655C8 /* QuartzCore.framework */; };
-		E04C89EA0B318CAFB92F0F85 /* libPods-RKNotificationHubTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18AA74D719334ED82E2A0EBA /* libPods-RKNotificationHubTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,8 +29,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		18AA74D719334ED82E2A0EBA /* libPods-RKNotificationHubTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RKNotificationHubTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A49F5E8EBA593E310AF6B3D /* Pods-RKNotificationHubTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RKNotificationHubTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RKNotificationHubTests/Pods-RKNotificationHubTests.debug.xcconfig"; sourceTree = "<group>"; };
 		998DB1AF19DAEA72006655C8 /* RKNotificationHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RKNotificationHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		998DB1B319DAEA72006655C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		998DB1B419DAEA72006655C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -48,7 +45,6 @@
 		998DB1D819DAEE12006655C8 /* RKNotificationHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKNotificationHub.h; sourceTree = "<group>"; };
 		998DB1D919DAEE12006655C8 /* RKNotificationHub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKNotificationHub.m; sourceTree = "<group>"; };
 		998DB1E119DAFE9D006655C8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		C6092AB33B3DCE32F29C8455 /* Pods-RKNotificationHubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RKNotificationHubTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RKNotificationHubTests/Pods-RKNotificationHubTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,21 +60,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E04C89EA0B318CAFB92F0F85 /* libPods-RKNotificationHubTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5AA2EAE8AA810749C363F2F2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				18AA74D719334ED82E2A0EBA /* libPods-RKNotificationHubTests.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		998DB1A619DAEA72006655C8 = {
 			isa = PBXGroup;
 			children = (
@@ -86,8 +73,6 @@
 				998DB1B119DAEA72006655C8 /* RKNotificationHub */,
 				998DB1CB19DAEA72006655C8 /* RKNotificationHubTests */,
 				998DB1B019DAEA72006655C8 /* Products */,
-				D931D981BA641125B2394D41 /* Pods */,
-				5AA2EAE8AA810749C363F2F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,15 +128,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D931D981BA641125B2394D41 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				4A49F5E8EBA593E310AF6B3D /* Pods-RKNotificationHubTests.debug.xcconfig */,
-				C6092AB33B3DCE32F29C8455 /* Pods-RKNotificationHubTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -176,11 +152,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 998DB1D519DAEA72006655C8 /* Build configuration list for PBXNativeTarget "RKNotificationHubTests" */;
 			buildPhases = (
-				F6084CBD4C0275C6008835C9 /* Check Pods Manifest.lock */,
 				998DB1C419DAEA72006655C8 /* Sources */,
 				998DB1C519DAEA72006655C8 /* Frameworks */,
 				998DB1C619DAEA72006655C8 /* Resources */,
-				7B6B3EE7918159C19F730944 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,39 +222,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		7B6B3EE7918159C19F730944 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RKNotificationHubTests/Pods-RKNotificationHubTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F6084CBD4C0275C6008835C9 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		998DB1AB19DAEA72006655C8 /* Sources */ = {
@@ -354,8 +295,6 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -397,8 +336,6 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -436,7 +373,6 @@
 		};
 		998DB1D619DAEA72006655C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A49F5E8EBA593E310AF6B3D /* Pods-RKNotificationHubTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -456,7 +392,6 @@
 		};
 		998DB1D719DAEA72006655C8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6092AB33B3DCE32F29C8455 /* Pods-RKNotificationHubTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
