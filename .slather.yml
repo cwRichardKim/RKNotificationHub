@@ -1,0 +1,3 @@
+coverage_service: coveralls
+xcodeproj: RKNotificationHub.xcodeproj
+source_directory: RKNotificationHub
