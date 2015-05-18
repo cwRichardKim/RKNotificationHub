@@ -10,22 +10,22 @@
 #import <QuartzCore/QuartzCore.h>
 
 //%%% default diameter
-CGFloat kDefaultDiameter = 30;
-CGFloat kCountMagnitudeAdaptationRatio = 0.3;
+CGFloat RKNotificationHubDefaultDiameter = 30;
+static CGFloat kCountMagnitudeAdaptationRatio = 0.3;
 //%%% pop values
-CGFloat kPopStartRatio = .85;
-CGFloat kPopOutRatio = 1.05;
-CGFloat kPopInRatio = .95;
+static CGFloat kPopStartRatio = .85;
+static CGFloat kPopOutRatio = 1.05;
+static CGFloat kPopInRatio = .95;
 
 //%%% blink values
-CGFloat kBlinkDuration = 0.1;
-CGFloat kBlinkAlpha = 0.1;
+static CGFloat kBlinkDuration = 0.1;
+static CGFloat kBlinkAlpha = 0.1;
 
 //%%% bump values
-CGFloat kFirstBumpDistance = 8.0;
-CGFloat kBumpTimeSeconds = 0.13;
-CGFloat SECOND_BUMP_DIST = 4.0;
-CGFloat kBumpTimeSeconds2 = 0.1;
+static CGFloat kFirstBumpDistance = 8.0;
+static CGFloat kBumpTimeSeconds = 0.13;
+static CGFloat SECOND_BUMP_DIST = 4.0;
+static CGFloat kBumpTimeSeconds2 = 0.1;
 
 @interface RKView : UIView
 @property (nonatomic) BOOL isUserChangingBackgroundColor;
@@ -99,7 +99,7 @@ CGFloat kBumpTimeSeconds2 = 0.1;
     [countLabel setTextAlignment:NSTextAlignmentCenter];
     countLabel.textColor = [UIColor whiteColor];
     
-    [self setCircleAtFrame:CGRectMake(frame.size.width- (kDefaultDiameter*2/3), -kDefaultDiameter/3, kDefaultDiameter, kDefaultDiameter)];
+    [self setCircleAtFrame:CGRectMake(frame.size.width- (RKNotificationHubDefaultDiameter*2/3), -RKNotificationHubDefaultDiameter/3, RKNotificationHubDefaultDiameter, RKNotificationHubDefaultDiameter)];
     
     [view addSubview:redCircle];
     [view addSubview:countLabel];
