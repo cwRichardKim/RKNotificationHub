@@ -34,6 +34,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+/**
+ *  The default diameter of the notification hub view.
+ */
+FOUNDATION_EXPORT CGFloat const RKNotificationHubDefaultDiameter;
+
 @interface RKNotificationHub : NSObject
 
 //%%% setup
