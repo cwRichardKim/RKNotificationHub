@@ -23,10 +23,10 @@ Code:
 ```
 ``` objc
   -(void)increment;
-  -(void)incrementBy:(int)amount;
+  -(void)incrementBy:(NSUInteger)amount;
   -(void)decrement;
-  -(void)decrementBy:(int)amount;
-  -(void)setCount:(int)newCount; //%%% set to a certain number
+  -(void)decrementBy:(NSUInteger)amount;
+  -(void)setCount:(NSUInteger)newCount; //%%% set to a certain number
 ```
 
 __Combine Actions!__
@@ -73,7 +73,6 @@ __Combine Actions!__
 
 **It isn't incrementing / decrementing properly!**
 * I've written it so that any count < 1 doesn't show up. If you need help customizing this, reach out to me
-* Calling [decrement] will never bring the count below 0, but calling [decrementBy:] or [setCount:] will allow negative values (negative values still won't show up)
 
 **The circle is in a weird place**
 * If you want to resize the circle, use [scaleCircleSizeBy:]. 0.5 will give you half the size, 2 will give you double
@@ -91,6 +90,7 @@ __Combine Actions!__
 * 1.0.1 cocoapod allows iOS 7.0
 * 1.0.2 added "hideCount", "showCount", and "count" methods, allowing indeterminate badges with no number
 * 1.0.5 added bubble expansion for larger numbers [(gif)](http://i.imgur.com/cpQuShT.gif)
+* 1.0.6 changed count to `NSUInteger`, made local constants `static const`
 
 ### Areas for Improvements / involvement
 * A mechanism for adding a custom animation
