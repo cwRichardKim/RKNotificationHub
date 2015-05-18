@@ -10,22 +10,22 @@
 #import <QuartzCore/QuartzCore.h>
 
 //%%% default diameter
-CGFloat RKNotificationHubDefaultDiameter = 30;
-static CGFloat kCountMagnitudeAdaptationRatio = 0.3;
+CGFloat const RKNotificationHubDefaultDiameter = 30;
+static CGFloat const kCountMagnitudeAdaptationRatio = 0.3;
 //%%% pop values
-static CGFloat kPopStartRatio = .85;
-static CGFloat kPopOutRatio = 1.05;
-static CGFloat kPopInRatio = .95;
+static CGFloat const kPopStartRatio = .85;
+static CGFloat const kPopOutRatio = 1.05;
+static CGFloat const kPopInRatio = .95;
 
 //%%% blink values
-static CGFloat kBlinkDuration = 0.1;
-static CGFloat kBlinkAlpha = 0.1;
+static CGFloat const kBlinkDuration = 0.1;
+static CGFloat const kBlinkAlpha = 0.1;
 
 //%%% bump values
-static CGFloat kFirstBumpDistance = 8.0;
-static CGFloat kBumpTimeSeconds = 0.13;
-static CGFloat SECOND_BUMP_DIST = 4.0;
-static CGFloat kBumpTimeSeconds2 = 0.1;
+static CGFloat const kFirstBumpDistance = 8.0;
+static CGFloat const kBumpTimeSeconds = 0.13;
+static CGFloat const SECOND_BUMP_DIST = 4.0;
+static CGFloat const kBumpTimeSeconds2 = 0.1;
 
 @interface RKView : UIView
 @property (nonatomic) BOOL isUserChangingBackgroundColor;
