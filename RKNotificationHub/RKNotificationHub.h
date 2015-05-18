@@ -51,7 +51,7 @@ FOUNDATION_EXPORT CGFloat const RKNotificationHubDefaultDiameter;
 - (void)setCircleColor:(UIColor*)circleColor labelColor:(UIColor*)labelColor;
 - (void)moveCircleByX:(CGFloat)x Y:(CGFloat)y;
 - (void)scaleCircleSizeBy:(CGFloat)scale;
-- (void)setCountLabelFont:(UIFont *)font;
+@property (nonatomic, strong) UIFont *countLabelFont;
 
 //%%% changing the count
 - (void)increment;
