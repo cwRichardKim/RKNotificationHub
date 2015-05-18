@@ -45,7 +45,6 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
 
 
 @implementation RKNotificationHub {
-    int count;
     int curOrderMagnitude;
     UILabel *countLabel;
     RKView *redCircle;
@@ -80,7 +79,7 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
 
 //%%% give this a view and an initial count (0 hides the notification circle)
 // and it will make a hub for you
-- (void)setView:(UIView *)view andCount:(int)startCount
+- (void)setView:(UIView *)view andCount:(NSUInteger)startCount
 {
     curOrderMagnitude = 0;
 
@@ -95,7 +94,7 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
     
     countLabel = [[UILabel alloc]initWithFrame:redCircle.frame];
     countLabel.userInteractionEnabled = NO;
-    [self setCount:startCount];
+    self.count = startCount;
     [countLabel setTextAlignment:NSTextAlignmentCenter];
     countLabel.textColor = [UIColor whiteColor];
     
@@ -169,48 +168,48 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
 //%%% increases count by 1
 - (void)increment
 {
-    [self setCount:count+1];
+    [self incrementBy:1];
 }
 
 //%%% increases count by amount
-- (void)incrementBy:(int)amount
+- (void)incrementBy:(NSUInteger)amount
 {
-    [self setCount:count+amount];
+    self.count += amount;
 }
 
 //%%% decreases count
 - (void)decrement
 {
-    if (count == 0) {
-        return;
-    }
-    [self setCount:count-1];
+    [self decrementBy:1];
 }
 
 //%%% decreases count by amount
-- (void)decrementBy:(int)amount
+- (void)decrementBy:(NSUInteger)amount
 {
-    [self setCount:count-amount];
+    if (amount >= self.count) {
+        self.count = 0;
+    }
+    self.count -= amount;
 }
 
 //%%% set the count yourself
-- (void)setCount:(int)newCount
+- (void)setCount:(NSUInteger)newCount
 {
-    count = newCount;
-    countLabel.text = [NSString stringWithFormat:@"%i",count];
+    _count = newCount;
+    countLabel.text = [NSString stringWithFormat:@"%@", @(self.count)];
     [self checkZero];
     [self expandToFitLargerDigits];
-}
-
-- (int)count
-{
-    return count;
 }
 
 //%% set the font of the label
 - (void)setCountLabelFont:(UIFont *)font
 {
     [countLabel setFont:[UIFont fontWithName:font.fontName size:redCircle.frame.size.width/2]];
+}
+
+- (UIFont *)countLabelFont
+{
+    return countLabel.font;
 }
 
 #pragma mark - ANIMATION
@@ -367,7 +366,7 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
 //%%% hides the notification if the value is 0
 - (void)checkZero
 {
-    if (count <= 0) {
+    if (self.count <= 0) {
         redCircle.hidden = YES;
         countLabel.hidden = YES;
     } else {
@@ -379,7 +378,7 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
 }
 
 - (void)expandToFitLargerDigits {
-    int orderOfMagnitude = log10((double)count);
+    int orderOfMagnitude = log10((double)self.count);
     orderOfMagnitude = (orderOfMagnitude >= 2) ? orderOfMagnitude : 1;
     CGRect frame = initialFrame;
     frame.size.width = initialFrame.size.width * (1 + kCountMagnitudeAdaptationRatio * (orderOfMagnitude - 1));
