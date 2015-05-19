@@ -90,7 +90,7 @@ __Combine Actions!__
 * 1.0.1 cocoapod allows iOS 7.0
 * 1.0.2 added "hideCount", "showCount", and "count" methods, allowing indeterminate badges with no number
 * 1.0.5 added bubble expansion for larger numbers [(gif)](http://i.imgur.com/cpQuShT.gif)
-* 1.0.6 changed count to `NSUInteger`, made local constants `static const`
+* 2.0.0 changed count to `NSUInteger` (removed support for negative counts), made local constants `static const`
 
 ### Areas for Improvements / involvement
 * A mechanism for adding a custom animation

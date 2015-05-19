@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "RKNotificationHub"
-s.version      = "1.0.6"
+s.version      = "2.0.0"
 s.summary      = "iOS: Make any UIView a full fledged notification center"
 
 s.description  = "A simple one line solution to turning adding a notification bubble to any UIView. Easily increment, decrement, an animate the notification, -Notification, -Notification Center, -objectivec, -ios, -iphone, -xcode"
