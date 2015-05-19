@@ -188,6 +188,7 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
 {
     if (amount >= self.count) {
         self.count = 0;
+        return;
     }
     self.count -= amount;
 }
