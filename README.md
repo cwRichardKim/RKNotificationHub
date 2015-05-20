@@ -26,7 +26,7 @@ Code:
   -(void)incrementBy:(NSUInteger)amount;
   -(void)decrement;
   -(void)decrementBy:(NSUInteger)amount;
-  -(void)setCount:(NSUInteger)newCount; //%%% set to a certain number
+  @property (nonatomic, assign) NSUInteger count; //%%% set to a certain number
 ```
 
 __Combine Actions!__
