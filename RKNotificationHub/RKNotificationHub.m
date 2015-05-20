@@ -10,22 +10,22 @@
 #import <QuartzCore/QuartzCore.h>
 
 //%%% default diameter
-CGFloat kDefaultDiameter = 30;
-CGFloat kCountMagnitudeAdaptationRatio = 0.3;
+CGFloat const RKNotificationHubDefaultDiameter = 30;
+static CGFloat const kCountMagnitudeAdaptationRatio = 0.3;
 //%%% pop values
-CGFloat kPopStartRatio = .85;
-CGFloat kPopOutRatio = 1.05;
-CGFloat kPopInRatio = .95;
+static CGFloat const kPopStartRatio = .85;
+static CGFloat const kPopOutRatio = 1.05;
+static CGFloat const kPopInRatio = .95;
 
 //%%% blink values
-CGFloat kBlinkDuration = 0.1;
-CGFloat kBlinkAlpha = 0.1;
+static CGFloat const kBlinkDuration = 0.1;
+static CGFloat const kBlinkAlpha = 0.1;
 
 //%%% bump values
-CGFloat kFirstBumpDistance = 8.0;
-CGFloat kBumpTimeSeconds = 0.13;
-CGFloat SECOND_BUMP_DIST = 4.0;
-CGFloat kBumpTimeSeconds2 = 0.1;
+static CGFloat const kFirstBumpDistance = 8.0;
+static CGFloat const kBumpTimeSeconds = 0.13;
+static CGFloat const SECOND_BUMP_DIST = 4.0;
+static CGFloat const kBumpTimeSeconds2 = 0.1;
 
 @interface RKView : UIView
 @property (nonatomic) BOOL isUserChangingBackgroundColor;
@@ -45,7 +45,6 @@ CGFloat kBumpTimeSeconds2 = 0.1;
 
 
 @implementation RKNotificationHub {
-    int count;
     int curOrderMagnitude;
     UILabel *countLabel;
     RKView *redCircle;
@@ -80,7 +79,7 @@ CGFloat kBumpTimeSeconds2 = 0.1;
 
 //%%% give this a view and an initial count (0 hides the notification circle)
 // and it will make a hub for you
-- (void)setView:(UIView *)view andCount:(int)startCount
+- (void)setView:(UIView *)view andCount:(NSUInteger)startCount
 {
     curOrderMagnitude = 0;
 
@@ -95,11 +94,11 @@ CGFloat kBumpTimeSeconds2 = 0.1;
     
     countLabel = [[UILabel alloc]initWithFrame:redCircle.frame];
     countLabel.userInteractionEnabled = NO;
-    [self setCount:startCount];
+    self.count = startCount;
     [countLabel setTextAlignment:NSTextAlignmentCenter];
     countLabel.textColor = [UIColor whiteColor];
     
-    [self setCircleAtFrame:CGRectMake(frame.size.width- (kDefaultDiameter*2/3), -kDefaultDiameter/3, kDefaultDiameter, kDefaultDiameter)];
+    [self setCircleAtFrame:CGRectMake(frame.size.width- (RKNotificationHubDefaultDiameter*2/3), -RKNotificationHubDefaultDiameter/3, RKNotificationHubDefaultDiameter, RKNotificationHubDefaultDiameter)];
     
     [view addSubview:redCircle];
     [view addSubview:countLabel];
@@ -169,48 +168,49 @@ CGFloat kBumpTimeSeconds2 = 0.1;
 //%%% increases count by 1
 - (void)increment
 {
-    [self setCount:count+1];
+    [self incrementBy:1];
 }
 
 //%%% increases count by amount
-- (void)incrementBy:(int)amount
+- (void)incrementBy:(NSUInteger)amount
 {
-    [self setCount:count+amount];
+    self.count += amount;
 }
 
 //%%% decreases count
 - (void)decrement
 {
-    if (count == 0) {
-        return;
-    }
-    [self setCount:count-1];
+    [self decrementBy:1];
 }
 
 //%%% decreases count by amount
-- (void)decrementBy:(int)amount
+- (void)decrementBy:(NSUInteger)amount
 {
-    [self setCount:count-amount];
+    if (amount >= self.count) {
+        self.count = 0;
+        return;
+    }
+    self.count -= amount;
 }
 
 //%%% set the count yourself
-- (void)setCount:(int)newCount
+- (void)setCount:(NSUInteger)newCount
 {
-    count = newCount;
-    countLabel.text = [NSString stringWithFormat:@"%i",count];
+    _count = newCount;
+    countLabel.text = [NSString stringWithFormat:@"%@", @(self.count)];
     [self checkZero];
     [self expandToFitLargerDigits];
-}
-
-- (int)count
-{
-    return count;
 }
 
 //%% set the font of the label
 - (void)setCountLabelFont:(UIFont *)font
 {
     [countLabel setFont:[UIFont fontWithName:font.fontName size:redCircle.frame.size.width/2]];
+}
+
+- (UIFont *)countLabelFont
+{
+    return countLabel.font;
 }
 
 #pragma mark - ANIMATION
@@ -367,7 +367,7 @@ CGFloat kBumpTimeSeconds2 = 0.1;
 //%%% hides the notification if the value is 0
 - (void)checkZero
 {
-    if (count <= 0) {
+    if (self.count <= 0) {
         redCircle.hidden = YES;
         countLabel.hidden = YES;
     } else {
@@ -379,7 +379,7 @@ CGFloat kBumpTimeSeconds2 = 0.1;
 }
 
 - (void)expandToFitLargerDigits {
-    int orderOfMagnitude = log10((double)count);
+    int orderOfMagnitude = log10((double)self.count);
     orderOfMagnitude = (orderOfMagnitude >= 2) ? orderOfMagnitude : 1;
     CGRect frame = initialFrame;
     frame.size.width = initialFrame.size.width * (1 + kCountMagnitudeAdaptationRatio * (orderOfMagnitude - 1));

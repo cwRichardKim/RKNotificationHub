@@ -34,6 +34,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+/**
+ *  The default diameter of the notification hub view.
+ */
+FOUNDATION_EXPORT CGFloat const RKNotificationHubDefaultDiameter;
+
 @interface RKNotificationHub : NSObject
 
 //%%% setup
@@ -41,20 +46,19 @@
 - (id)initWithBarButtonItem:(UIBarButtonItem *)barButtonItem;
 
 //%%% adjustment methods
-- (void)setView:(UIView *)view andCount:(int)startCount;
+- (void)setView:(UIView *)view andCount:(NSUInteger)startCount;
 - (void)setCircleAtFrame:(CGRect)frame;
 - (void)setCircleColor:(UIColor*)circleColor labelColor:(UIColor*)labelColor;
 - (void)moveCircleByX:(CGFloat)x Y:(CGFloat)y;
 - (void)scaleCircleSizeBy:(CGFloat)scale;
-- (void)setCountLabelFont:(UIFont *)font;
+@property (nonatomic, strong) UIFont *countLabelFont;
 
 //%%% changing the count
 - (void)increment;
-- (void)incrementBy:(int)amount;
+- (void)incrementBy:(NSUInteger)amount;
 - (void)decrement;
-- (void)decrementBy:(int)amount;
-- (void)setCount:(int)newCount;
-- (int)count; // returns the count (treat as get method)
+- (void)decrementBy:(NSUInteger)amount;
+@property (nonatomic, assign) NSUInteger count;
 
 //%%% hiding / showing the count
 - (void)hideCount;
