@@ -97,6 +97,7 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
     self.count = startCount;
     [countLabel setTextAlignment:NSTextAlignmentCenter];
     countLabel.textColor = [UIColor whiteColor];
+    countLabel.backgroundColor = [UIColor clearColor];
     
     [self setCircleAtFrame:CGRectMake(frame.size.width- (RKNotificationHubDefaultDiameter*2/3), -RKNotificationHubDefaultDiameter/3, RKNotificationHubDefaultDiameter, RKNotificationHubDefaultDiameter)];
     
