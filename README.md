@@ -1,7 +1,7 @@
 RKNotificationHub
 =================
 
-A way to quickly add a notification icon to a UIView
+A way to quickly add a notification icon to a UIView (iOS6 and up)
 
 ![demo](http://i.imgur.com/SpE2BQv.gif)
 
