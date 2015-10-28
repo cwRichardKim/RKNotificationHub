@@ -86,7 +86,8 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
     CGRect frame = view.frame;
     
     isIndeterminateMode = NO;
-    
+    self.customizableFontSize = NO;
+
     redCircle = [[RKView alloc]init];
     redCircle.userInteractionEnabled = NO;
     redCircle.isUserChangingBackgroundColor = YES;
@@ -118,7 +119,11 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
     initialFrame = frame;
     countLabel.frame = redCircle.frame;
     redCircle.layer.cornerRadius = frame.size.height/2;
-    [countLabel setFont:[UIFont fontWithName:@"HelveticaNeue" size:frame.size.width/2]];
+    if (self.customizableFontSize) {
+      [countLabel setFont:countLabelFont];
+    } else { // Default
+      [countLabel setFont:[UIFont fontWithName:@"HelveticaNeue" size:frame.size.width/2]];
+    }
     [self expandToFitLargerDigits];
 }
 
@@ -206,7 +211,11 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
 //%% set the font of the label
 - (void)setCountLabelFont:(UIFont *)font
 {
-    [countLabel setFont:[UIFont fontWithName:font.fontName size:redCircle.frame.size.width/2]];
+    if (self.customizableFontSize) {
+      [countLabel setFont:font];
+    } else { // Default
+      [countLabel setFont:[UIFont fontWithName:font.fontName size:redCircle.frame.size.width/2]];
+    }
 }
 
 - (UIFont *)countLabelFont
