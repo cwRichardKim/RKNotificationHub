@@ -120,7 +120,7 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
     countLabel.frame = redCircle.frame;
     redCircle.layer.cornerRadius = frame.size.height/2;
     if (self.customizableFontSize) {
-      [countLabel setFont:countLabelFont];
+      [countLabel setFont:self.countLabelFont];
     } else { // Default
       [countLabel setFont:[UIFont fontWithName:@"HelveticaNeue" size:frame.size.width/2]];
     }
