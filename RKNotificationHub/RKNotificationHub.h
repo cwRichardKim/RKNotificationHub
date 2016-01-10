@@ -46,7 +46,7 @@ FOUNDATION_EXPORT CGFloat const RKNotificationHubDefaultDiameter;
 - (id)initWithBarButtonItem:(UIBarButtonItem *)barButtonItem;
 
 //%%% adjustment methods
-- (void)setView:(UIView *)view andCount:(NSUInteger)startCount;
+- (void)setView:(UIView *)view andCount:(int)startCount;
 - (void)setCircleAtFrame:(CGRect)frame;
 - (void)setCircleColor:(UIColor*)circleColor labelColor:(UIColor*)labelColor;
 - (void)moveCircleByX:(CGFloat)x Y:(CGFloat)y;
