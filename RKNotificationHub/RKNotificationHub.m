@@ -79,7 +79,7 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
 
 //%%% give this a view and an initial count (0 hides the notification circle)
 // and it will make a hub for you
-- (void)setView:(UIView *)view andCount:(NSUInteger)startCount
+- (void)setView:(UIView *)view andCount:(int)startCount
 {
     curOrderMagnitude = 0;
 
@@ -173,7 +173,7 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
 }
 
 //%%% increases count by amount
-- (void)incrementBy:(NSUInteger)amount
+- (void)incrementBy:(int)amount
 {
     self.count += amount;
 }
@@ -185,7 +185,7 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
 }
 
 //%%% decreases count by amount
-- (void)decrementBy:(NSUInteger)amount
+- (void)decrementBy:(int)amount
 {
     if (amount >= self.count) {
         self.count = 0;
@@ -195,7 +195,7 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
 }
 
 //%%% set the count yourself
-- (void)setCount:(NSUInteger)newCount
+- (void)setCount:(int)newCount
 {
     _count = newCount;
     countLabel.text = [NSString stringWithFormat:@"%@", @(self.count)];
