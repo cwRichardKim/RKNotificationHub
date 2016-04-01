@@ -91,7 +91,8 @@ __Combine Actions!__
 * 1.0.2 added "hideCount", "showCount", and "count" methods, allowing indeterminate badges with no number
 * 1.0.5 added bubble expansion for larger numbers [(gif)](http://i.imgur.com/cpQuShT.gif)
 * 2.0.0 changed count to `NSUInteger` (removed support for negative counts), made local constants `static const`
-* 2.0.1 changed count back to 'int' for better swift compatability
+* 2.0.1 iOS 6 compatability
+* 2.0.2 changed count back to 'int' for better swift compatability
 
 ### Areas for Improvements / involvement
 * A mechanism for adding a custom animation
