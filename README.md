@@ -23,10 +23,10 @@ Code:
 ```
 ``` objc
   -(void)increment;
-  -(void)incrementBy:(NSUInteger)amount;
+  -(void)incrementBy:(int)amount;
   -(void)decrement;
-  -(void)decrementBy:(NSUInteger)amount;
-  @property (nonatomic, assign) NSUInteger count; //%%% set to a certain number
+  -(void)decrementBy:(int)amount;
+  @property (nonatomic, assign) int count; //%%% set to a certain number
 ```
 
 __Combine Actions!__
@@ -41,7 +41,7 @@ __Combine Actions!__
 ![blink](http://i.imgur.com/Ftbrh87.gif)
 ``` objc
   //%%% COLOR
-  [hub setCircleColor:[UIColor colorWithRed:0.98 green:0.66 blue:0.2 alpha:1] 
+  [hub setCircleColor:[UIColor colorWithRed:0.98 green:0.66 blue:0.2 alpha:1]
            labelColor:[UIColor whiteColor]];
 ```
 
@@ -49,10 +49,10 @@ __Combine Actions!__
 ```objc
   //%%% CIRCLE FRAME
   [hub setCircleAtFrame:CGRectMake(-10, -10, 30, 30)]; //frame relative to the view you set it to
-  
+
   //%%% MOVE FRAME
   [hub moveCircleByX:-5 Y:5]; // moves the circle 5 pixels left and down from its current position
-  
+
   //%%% CIRCLE SIZE
   [hub scaleCircleSizeBy:2]; // doubles the size of the circle, keeps the same center
 ```
@@ -91,6 +91,7 @@ __Combine Actions!__
 * 1.0.2 added "hideCount", "showCount", and "count" methods, allowing indeterminate badges with no number
 * 1.0.5 added bubble expansion for larger numbers [(gif)](http://i.imgur.com/cpQuShT.gif)
 * 2.0.0 changed count to `NSUInteger` (removed support for negative counts), made local constants `static const`
+* 2.0.1 changed count back to 'int' for better swift compatability
 
 ### Areas for Improvements / involvement
 * A mechanism for adding a custom animation
