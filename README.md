@@ -93,6 +93,7 @@ __Combine Actions!__
 * 2.0.0 changed count to `NSUInteger` (removed support for negative counts), made local constants `static const`
 * 2.0.1 iOS 6 compatability
 * 2.0.2 changed count back to 'int' for better swift compatability
+* 2.0.4 fixed cocoapod update issue
 
 ### Areas for Improvements / involvement
 * A mechanism for adding a custom animation
