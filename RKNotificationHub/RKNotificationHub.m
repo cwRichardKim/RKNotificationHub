@@ -153,8 +153,8 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
 }
 
 - (void)setCircleBorderColor:(UIColor *)color borderWidth:(CGFloat)width {
-    redCircle.layer.borderColor = color.CGColor
-    redCircle.layer.borderWidth = width
+    redCircle.layer.borderColor = color.CGColor;
+    redCircle.layer.borderWidth = width;
 }
 
 - (void)hideCount
