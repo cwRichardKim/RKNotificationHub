@@ -11,12 +11,12 @@ Code:
   [hub increment]; // increments the count to 1, making the notification visible
 ```
 
-###Pod
+### Pod
 ```
     pod 'RKNotificationHub'
 ```
 
-###USAGE
+### USAGE
 ![increment](http://i.imgur.com/zpgkNtE.gif)
 ``` objc
   [hub increment];
@@ -37,7 +37,7 @@ __Combine Actions!__
   [hub pop];
 ```
 
-###CUSTOMIZE
+### CUSTOMIZE
 ![blink](http://i.imgur.com/Ftbrh87.gif)
 ``` objc
   //%%% COLOR
@@ -65,7 +65,7 @@ __Combine Actions!__
 ```
 
 
-###TROUBLESHOOTING
+### TROUBLESHOOTING
 **Notification isn't showing up!**
 * If the hub value is < 1, the circle hides.  Try calling `[increment]`
 * Make sure the view you set the hub to is visible (i.e. did you call `[self.view addSubview: yourView]`?)
