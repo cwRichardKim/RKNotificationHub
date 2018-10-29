@@ -63,6 +63,7 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
     self = [super init];
     if (!self) return nil;
     
+    _maxCount = 100000;
     [self setView:view andCount:0];
     
     return self;
@@ -203,7 +204,14 @@ static CGFloat const kBumpTimeSeconds2 = 0.1;
 - (void)setCount:(int)newCount
 {
     _count = newCount;
-    countLabel.text = [NSString stringWithFormat:@"%@", @(self.count)];
+    
+    NSString *labelText = [NSString stringWithFormat:@"%@", @(self.count)];
+    
+    if (_count > self.maxCount){
+        labelText = [NSString stringWithFormat:@"%@+", @(self.maxCount)];
+    }
+    
+    countLabel.text = labelText;
     [self checkZero];
     [self expandToFitLargerDigits];
 }
