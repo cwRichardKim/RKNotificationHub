@@ -60,6 +60,7 @@ FOUNDATION_EXPORT CGFloat const RKNotificationHubDefaultDiameter;
 - (void)decrement;
 - (void)decrementBy:(int)amount;
 @property (nonatomic, assign) int count;
+@property (nonatomic, assign) int maxCount;
 
 //%%% hiding / showing the count
 - (void)hideCount;
